@@ -3,20 +3,23 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
+title: NoiiApple
+subtitle: 'MacOS Tips...'
 description: ''
 keywords:
-author: John Doe
-language: en
+author: Mr.QinLzhu
+language: zh-CN
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://www.noiiapple.com
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :abbrlink/
 permalink_defaults:
+  abbrlink:
+  alg: crc32
+  rep: dec
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
   trailing_html: true # Set to false to remove trailing '.html' from permalinks
@@ -29,7 +32,7 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
-skip_render:
+skip_render: README.md
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -41,7 +44,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -98,9 +101,40 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo:
+    github: git@github.com:qLzhu/noiiapple.git,gh-pages
+    coding: git@e.coding.net:siyou/noiiapple/noiiapple.git,coding-pages
+
+
+# ---------------------------------------------------------------
+# 第三方插件
+# ---------------------------------------------------------------
+# 本地搜索
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+# 阅读统计
+symbols_count_time:
+  symbols: true                 #统计字数
+  time: true                    #计算时间
+  total_symbols: true           #统计所有文章的总计字数
+  total_time: false             #计算所有文章的总计时间
+  exclude_codeblock: false      #排除代码块中的字符
+  awl: 2                        #平均一个文字的字符长度，中文为主的博客建议设置为 2
+  wpm: 300                      #每分钟阅读速度，中文为主的博客建议设置为 300
+  suffix: "分钟"                 #时间单位
+
+# sitemap
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
