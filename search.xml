@@ -581,29 +581,6 @@
       </tags>
   </entry>
   <entry>
-    <title>系统指令-删除程序的卸载残留</title>
-    <url>/2296/</url>
-    <content><![CDATA[<p>MacOS 系统上卸载程序，我们通常的做法就是，直接删除位于 “访达-应用程序” 里面的App；又或者按住 <mark class="label default">⌥option</mark> 直接在启动台卸载（只适用于从 App Store 下载的程序）。这两种做法都是不会删除程序的用户配置及其其它关键信息的，时间长了系统虽然会帮我们自动清理一些残留。如果我们现在就不想保留哪？此时<mark class="label warning">可以使用 mdfind 命令，手动查询跟程序相关的文件并删除</mark>。</p>
-<div class="note "><p>mdfind 其实就是 MacOS 的聚焦搜索 Spotlight。如果您的 Spotlight 不正常工作，也可以 <code>mdutil -E</code> 强制重建索引数据库</p>
-</div>
-
-<p>例如：查询跟 CleanMyMac.app 所有相关的文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查询</span></span><br><span class="line">mdfind -name CleanMyMac</span><br><span class="line"><span class="comment"># /Applications/CleanMyMac X.app</span></span><br><span class="line"><span class="comment"># /Library/LaunchDaemons/com.macpaw.zh.CleanMyMac4.Agent.plist</span></span><br><span class="line"><span class="comment"># /Library/LaunchDaemons/com.macpaw.CleanMyMac4.Agent.plist</span></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># rm -rf 手动强制删除</span></span><br><span class="line"><span class="comment"># 如果路径中有空格的话，注意使用反斜杠转义下</span></span><br><span class="line">rm -rf /Applications/CleanMyMac\ X.app</span><br></pre></td></tr></table></figure>
-
-<p>还可以使用 -onlyin 参数，指定搜索的目录（mdfind -onlyin ~/downloads CleanMyMac）。</p>
-]]></content>
-      <categories>
-        <category>系统指令</category>
-      </categories>
-      <tags>
-        <tag>mdfind</tag>
-        <tag>uninstall</tag>
-        <tag>卸载</tag>
-        <tag>卸载残留</tag>
-        <tag>CleanMyMac X.app</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>系统指令-关闭SIP系统完整性保护</title>
     <url>/50664/</url>
     <content><![CDATA[<p>Apple 在 Mac 的 OS X EI Captian 版本时，开始采用 SIP 「System Integrity Protection，系统完整性保护」技术保护系统。SIP 能够有效地帮助我们，阻止恶意软件篡改系统上受保护的文件或文件夹。但，这会影响我们一些使用或设置。还有 App Store 上的所有应用程序，都是运用在沙盒模式下的。</p>
@@ -641,6 +618,29 @@
         <tag>SIP</tag>
         <tag>System Integrity Protection</tag>
         <tag>系统完整性保护</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统指令-删除程序的卸载残留</title>
+    <url>/2296/</url>
+    <content><![CDATA[<p>MacOS 系统上卸载程序，我们通常的做法就是，直接删除位于 “访达-应用程序” 里面的App；又或者按住 <mark class="label default">⌥option</mark> 直接在启动台卸载（只适用于从 App Store 下载的程序）。这两种做法都是不会删除程序的用户配置及其其它关键信息的，时间长了系统虽然会帮我们自动清理一些残留。如果我们现在就不想保留哪？此时<mark class="label warning">可以使用 mdfind 命令，手动查询跟程序相关的文件并删除</mark>。</p>
+<div class="note "><p>mdfind 其实就是 MacOS 的聚焦搜索 Spotlight。如果您的 Spotlight 不正常工作，也可以 <code>mdutil -E</code> 强制重建索引数据库</p>
+</div>
+
+<p>例如：查询跟 CleanMyMac.app 所有相关的文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查询</span></span><br><span class="line">mdfind -name CleanMyMac</span><br><span class="line"><span class="comment"># /Applications/CleanMyMac X.app</span></span><br><span class="line"><span class="comment"># /Library/LaunchDaemons/com.macpaw.zh.CleanMyMac4.Agent.plist</span></span><br><span class="line"><span class="comment"># /Library/LaunchDaemons/com.macpaw.CleanMyMac4.Agent.plist</span></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># rm -rf 手动强制删除</span></span><br><span class="line"><span class="comment"># 如果路径中有空格的话，注意使用反斜杠转义下</span></span><br><span class="line">rm -rf /Applications/CleanMyMac\ X.app</span><br></pre></td></tr></table></figure>
+
+<p>还可以使用 -onlyin 参数，指定搜索的目录（mdfind -onlyin ~/downloads CleanMyMac）。</p>
+]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>mdfind</tag>
+        <tag>uninstall</tag>
+        <tag>卸载</tag>
+        <tag>卸载残留</tag>
+        <tag>CleanMyMac X.app</tag>
       </tags>
   </entry>
   <entry>
