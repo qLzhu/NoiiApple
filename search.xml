@@ -341,6 +341,50 @@
       </tags>
   </entry>
   <entry>
+    <title>快捷键-自定义快捷键预设</title>
+    <url>/10680/</url>
+    <content><![CDATA[<a href="/43680/" title="快捷键-常用快捷键清单">快捷键-常用快捷键清单</a> 文章中，介绍了大家生活中常用的一些快捷键，想了解的请点击前方的链接，进行移步。熟悉这些快捷键的同时，那么，您知道如何自定义快捷键吗？
+
+<p>以 sublime text.app 为例，给菜单里的「打开项目…」设置 <mark class="label default">⌘Command + ;</mark> 键。</p>
+<img src="/10680/%E6%89%93%E5%BC%80%E9%A1%B9%E7%9B%AE.jpg" class="">
+
+<p style="margin-top: -15px;font-size: 12px;color: #999;text-align: center;">此图可以看出，原本的菜单选项，是没有快捷键的。</p>
+<a id="more"></a>
+
+<p><strong>具体步骤：</strong></p>
+<ol>
+<li>依次点按“系统偏好设置-键盘-快捷键-App快捷键- +”</li>
+<li>选择弹框中的「应用程序」下拉菜单</li>
+<li>选择「sublime text.app」</li>
+<li>在菜单标题中输入“打开项目…”</li>
+<li>在键盘快捷键中的 input 内，直接按 <mark class="label default">⌘Command + ;</mark>。</li>
+<li>添加</li>
+<li>以后可以愉快的玩耍啦…</li>
+</ol>
+<img src="/10680/%E8%AE%BE%E7%BD%AE.jpg" class="">
+
+<p>此时，您再回到 sublime text.app，快捷键是不是直接就显示出来了…</p>
+<img src="/10680/%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%88%E6%9E%9C.jpg" class="">
+
+<p><strong>温馨提示：</strong></p>
+<ol>
+<li>菜单标题要准确无误的输入；</li>
+<li>标题中如果有省略号请按 ⌥Option + ; 输入，或者直接输入三个小点；</li>
+<li>标题中出现大于号（&gt;）的请替换成 -&gt;；</li>
+<li>重复定义的快捷键无效；</li>
+</ol>
+]]></content>
+      <categories>
+        <category>快捷键</category>
+      </categories>
+      <tags>
+        <tag>快捷键</tag>
+        <tag>自定义</tag>
+        <tag>Command</tag>
+        <tag>自定义快捷键</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础知识-输入法</title>
     <url>/34408/</url>
     <content><![CDATA[<p>在使用 Mac 电脑时，只要您写作或者编辑文档，肯定避免不了使用输入法，基础的操作相信大家都会。例如：</p>
@@ -411,50 +455,6 @@
         <tag>输入法</tag>
         <tag>拼音</tag>
         <tag>国际音标</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>快捷键-自定义快捷键预设</title>
-    <url>/10680/</url>
-    <content><![CDATA[<a href="/43680/" title="快捷键-常用快捷键清单">快捷键-常用快捷键清单</a> 文章中，介绍了大家生活中常用的一些快捷键，想了解的请点击前方的链接，进行移步。熟悉这些快捷键的同时，那么，您知道如何自定义快捷键吗？
-
-<p>以 sublime text.app 为例，给菜单里的「打开项目…」设置 <mark class="label default">⌘Command + ;</mark> 键。</p>
-<img src="/10680/%E6%89%93%E5%BC%80%E9%A1%B9%E7%9B%AE.jpg" class="">
-
-<p style="margin-top: -15px;font-size: 12px;color: #999;text-align: center;">此图可以看出，原本的菜单选项，是没有快捷键的。</p>
-<a id="more"></a>
-
-<p><strong>具体步骤：</strong></p>
-<ol>
-<li>依次点按“系统偏好设置-键盘-快捷键-App快捷键- +”</li>
-<li>选择弹框中的「应用程序」下拉菜单</li>
-<li>选择「sublime text.app」</li>
-<li>在菜单标题中输入“打开项目…”</li>
-<li>在键盘快捷键中的 input 内，直接按 <mark class="label default">⌘Command + ;</mark>。</li>
-<li>添加</li>
-<li>以后可以愉快的玩耍啦…</li>
-</ol>
-<img src="/10680/%E8%AE%BE%E7%BD%AE.jpg" class="">
-
-<p>此时，您再回到 sublime text.app，快捷键是不是直接就显示出来了…</p>
-<img src="/10680/%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%88%E6%9E%9C.jpg" class="">
-
-<p><strong>温馨提示：</strong></p>
-<ol>
-<li>菜单标题要准确无误的输入；</li>
-<li>标题中如果有省略号请按 ⌥Option + ; 输入，或者直接输入三个小点；</li>
-<li>标题中出现大于号（&gt;）的请替换成 -&gt;；</li>
-<li>重复定义的快捷键无效；</li>
-</ol>
-]]></content>
-      <categories>
-        <category>快捷键</category>
-      </categories>
-      <tags>
-        <tag>快捷键</tag>
-        <tag>自定义</tag>
-        <tag>Command</tag>
-        <tag>自定义快捷键</tag>
       </tags>
   </entry>
   <entry>
@@ -621,6 +621,25 @@
       </tags>
   </entry>
   <entry>
+    <title>系统指令 Xcode-select --install</title>
+    <url>/44387/</url>
+    <content><![CDATA[<p>如果您是程序猿并且使用的是 Mac，肯定避免不了要安装 Xcode，因为它内置了很多开发所必须的环境。在最新版本的 Xcode 中，默认不再集成 「Xcode command line tools」。如果您不是 iOS 或 OS X 开发者，可以跳过 XCode（程序大小近10G）直接安装 「Xcode command line tools」 了。</p>
+<p>在 <a href="/881/" title="基础知识-终端工具">基础知识-终端工具</a> 内，键入如下命令，在弹出的界面点 Install 同意即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
+
+<p>如果 Install 不了，可到 <a href="https://developer.apple.com/download/more/">Developer Apple</a> 内下载相应的包。</p>
+<p>如果您想了解 Xcode command line tools 包含多少可用的命令，可以到 <mark class="label default">/Library/Developer/CommandLineTools/</mark> 查看，另外如果您想卸载的话直接删除该目录即可。</p>
+]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>xcode</tag>
+        <tag>git</tag>
+        <tag>xcode command line tools</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>系统指令-删除程序的卸载残留</title>
     <url>/2296/</url>
     <content><![CDATA[<p>MacOS 系统上卸载程序，我们通常的做法就是，直接删除位于 “访达-应用程序” 里面的App；又或者按住 <mark class="label default">⌥option</mark> 直接在启动台卸载（只适用于从 App Store 下载的程序）。这两种做法都是不会删除程序的用户配置及其其它关键信息的，时间长了系统虽然会帮我们自动清理一些残留。如果我们现在就不想保留哪？此时<mark class="label warning">可以使用 mdfind 命令，手动查询跟程序相关的文件并删除</mark>。</p>
@@ -641,25 +660,6 @@
         <tag>卸载</tag>
         <tag>卸载残留</tag>
         <tag>CleanMyMac X.app</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>系统指令 Xcode-select --install</title>
-    <url>/44387/</url>
-    <content><![CDATA[<p>如果您是程序猿并且使用的是 Mac，肯定避免不了要安装 Xcode，因为它内置了很多开发所必须的环境。在最新版本的 Xcode 中，默认不再集成 「Xcode command line tools」。如果您不是 iOS 或 OS X 开发者，可以跳过 XCode（程序大小近10G）直接安装 「Xcode command line tools」 了。</p>
-<p>在 <a href="/881/" title="基础知识-终端工具">基础知识-终端工具</a> 内，键入如下命令，在弹出的界面点 Install 同意即可。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
-
-<p>如果 Install 不了，可到 <a href="https://developer.apple.com/download/more/">Developer Apple</a> 内下载相应的包。</p>
-<p>如果您想了解 Xcode command line tools 包含多少可用的命令，可以到 <mark class="label default">/Library/Developer/CommandLineTools/</mark> 查看，另外如果您想卸载的话直接删除该目录即可。</p>
-]]></content>
-      <categories>
-        <category>系统指令</category>
-      </categories>
-      <tags>
-        <tag>xcode</tag>
-        <tag>git</tag>
-        <tag>xcode command line tools</tag>
       </tags>
   </entry>
   <entry>
