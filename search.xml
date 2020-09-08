@@ -271,6 +271,76 @@
       </tags>
   </entry>
   <entry>
+    <title>快捷键-常用快捷键清单</title>
+    <url>/43680/</url>
+    <content><![CDATA[<p>使用快捷键是提高我们工作效率最明显的办法之一，这里为大家列出了日常使用 MacOS 系统，用到最多的几个快捷键。如果想了解更多快捷键，请到 <a href="https://support.apple.com/zh-cn/HT201236">苹果官网</a> 进行查看。</p>
+<p>这么多快捷键全部记住是不可能的，最有效的办法就是用那个查那个！</p>
+<blockquote class="blockquote-center">
+<p>懒得搜快捷键的，推荐安装：<a href="https://www.ergonis.com/products/keycue/">CheatSheet.app</a>，长按 ⌘Command 可调出当前App的所有快捷键列表</p>
+
+</blockquote>
+<a id="more"></a>
+
+<h3 id="输入法"><a href="#输入法" class="headerlink" title="输入法"></a>输入法</h3><ul>
+<li>⌃Control + 空格键：系统默认的切换输入法快捷键</li>
+<li>中/英键：切换输入法</li>
+<li>⌘Command + ⌃Control + Space空格：字体检查器</li>
+</ul>
+<h3 id="文稿"><a href="#文稿" class="headerlink" title="文稿"></a>文稿</h3><ul>
+<li>⌘Command + C：复制</li>
+<li>⌘Command + X：剪切</li>
+<li>⌘Command + V：粘贴</li>
+<li>⌘Command + S：保存</li>
+<li>⌘Command + P：打印</li>
+</ul>
+<h3 id="访达"><a href="#访达" class="headerlink" title="访达"></a>访达</h3><ul>
+<li>⌘Command + E：推出磁盘或卷宗</li>
+<li>⌘Command + T：新建标签页</li>
+<li>⌘Command + N：新建窗口</li>
+<li>⌘Command + C：复制</li>
+<li>⌘Command + V：粘贴</li>
+<li>⌘Command + D：创建副本</li>
+<li>⌘Command + ⌥Option + V：剪切式粘贴</li>
+<li>⌘Command + I：显示文件简介</li>
+<li>⌘Command + ⇧Shift + N：新建空白文件夹</li>
+<li>⌘Command + ⇧Shift + G：前往执行文件夹</li>
+<li>⌘Command + ⇧Shift + .：显示隐藏文件</li>
+<li>⌘Command + ⌃Control + T：将指定文件添加到访达侧边栏</li>
+</ul>
+<h3 id="程序坞"><a href="#程序坞" class="headerlink" title="程序坞"></a>程序坞</h3><ul>
+<li>⌘Command + ⌥Option + D：显示或隐藏程序坞</li>
+</ul>
+<h3 id="废纸篓"><a href="#废纸篓" class="headerlink" title="废纸篓"></a>废纸篓</h3><ul>
+<li>⌘Command + ⌫ Delete：将所选项移到废纸篓</li>
+<li>⌘Command + ⇧Shift + ⌫ Delete：删除废纸篓所有内容</li>
+<li>⌘Command + ⇧Shift + ⌥Option + ⌫ Delete：删除内容不显示提示框</li>
+</ul>
+<h3 id="通用快捷键"><a href="#通用快捷键" class="headerlink" title="通用快捷键"></a>通用快捷键</h3><ul>
+<li>⌘Command + W：关闭窗口</li>
+<li>⌘Command + ⇥Tab：切换程序</li>
+<li>⌘Command + Q：退出程序</li>
+<li>⌘Command + 空格space：打开聚焦搜索框</li>
+<li>⌘Command +  M：最小化窗口</li>
+<li>⌘Command + ⌥Option + H：最小化当前程序的所有窗口</li>
+<li>⌘Command +  H：隐藏</li>
+<li>⌘Command + ⌥Option + H：隐藏其它</li>
+<li>⌘Command + ⌥Option + M + H：隐藏所有活动窗口</li>
+<li>⌘Command + ⌃Control + Q：锁屏</li>
+<li>⌘Command + ⇧Shift + Q：退出当前登陆账户会有提示</li>
+<li>⌘Command + ⇧Shift + ⌥Option + Q：强制退出当前账户</li>
+</ul>
+]]></content>
+      <categories>
+        <category>快捷键</category>
+      </categories>
+      <tags>
+        <tag>command</tag>
+        <tag>option</tag>
+        <tag>control</tag>
+        <tag>快捷键</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础知识-输入法</title>
     <url>/34408/</url>
     <content><![CDATA[<p>在使用 Mac 电脑时，只要您写作或者编辑文档，肯定避免不了使用输入法，基础的操作相信大家都会。例如：</p>
@@ -341,76 +411,6 @@
         <tag>输入法</tag>
         <tag>拼音</tag>
         <tag>国际音标</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>快捷键-常用快捷键清单</title>
-    <url>/43680/</url>
-    <content><![CDATA[<p>使用快捷键是提高我们工作效率最明显的办法之一，这里为大家列出了日常使用 MacOS 系统，用到最多的几个快捷键。如果想了解更多快捷键，请到 <a href="https://support.apple.com/zh-cn/HT201236">苹果官网</a> 进行查看。</p>
-<p>这么多快捷键全部记住是不可能的，最有效的办法就是用那个查那个！</p>
-<blockquote class="blockquote-center">
-<p>懒得搜快捷键的，推荐安装：<a href="https://www.ergonis.com/products/keycue/">CheatSheet.app</a>，长按 ⌘Command 可调出当前App的所有快捷键列表</p>
-
-</blockquote>
-<a id="more"></a>
-
-<h3 id="输入法"><a href="#输入法" class="headerlink" title="输入法"></a>输入法</h3><ul>
-<li>⌃Control + 空格键：系统默认的切换输入法快捷键</li>
-<li>中/英键：切换输入法</li>
-<li>⌘Command + ⌃Control + Space空格：字体检查器</li>
-</ul>
-<h3 id="文稿"><a href="#文稿" class="headerlink" title="文稿"></a>文稿</h3><ul>
-<li>⌘Command + C：复制</li>
-<li>⌘Command + X：剪切</li>
-<li>⌘Command + V：粘贴</li>
-<li>⌘Command + S：保存</li>
-<li>⌘Command + P：打印</li>
-</ul>
-<h3 id="访达"><a href="#访达" class="headerlink" title="访达"></a>访达</h3><ul>
-<li>⌘Command + E：推出磁盘或卷宗</li>
-<li>⌘Command + T：新建标签页</li>
-<li>⌘Command + N：新建窗口</li>
-<li>⌘Command + C：复制</li>
-<li>⌘Command + V：粘贴</li>
-<li>⌘Command + D：创建副本</li>
-<li>⌘Command + ⌥Option + V：剪切式粘贴</li>
-<li>⌘Command + I：显示文件简介</li>
-<li>⌘Command + ⇧Shift + N：新建空白文件夹</li>
-<li>⌘Command + ⇧Shift + G：前往执行文件夹</li>
-<li>⌘Command + ⇧Shift + .：显示隐藏文件</li>
-<li>⌘Command + ⌃Control + T：将指定文件添加到访达侧边栏</li>
-</ul>
-<h3 id="程序坞"><a href="#程序坞" class="headerlink" title="程序坞"></a>程序坞</h3><ul>
-<li>⌘Command + ⌥Option + D：显示或隐藏程序坞</li>
-</ul>
-<h3 id="废纸篓"><a href="#废纸篓" class="headerlink" title="废纸篓"></a>废纸篓</h3><ul>
-<li>⌘Command + ⌫ Delete：将所选项移到废纸篓</li>
-<li>⌘Command + ⇧Shift + ⌫ Delete：删除废纸篓所有内容</li>
-<li>⌘Command + ⇧Shift + ⌥Option + ⌫ Delete：删除内容不显示提示框</li>
-</ul>
-<h3 id="通用快捷键"><a href="#通用快捷键" class="headerlink" title="通用快捷键"></a>通用快捷键</h3><ul>
-<li>⌘Command + W：关闭窗口</li>
-<li>⌘Command + ⇥Tab：切换程序</li>
-<li>⌘Command + Q：退出程序</li>
-<li>⌘Command + 空格space：打开聚焦搜索框</li>
-<li>⌘Command +  M：最小化窗口</li>
-<li>⌘Command + ⌥Option + H：最小化当前程序的所有窗口</li>
-<li>⌘Command +  H：隐藏</li>
-<li>⌘Command + ⌥Option + H：隐藏其它</li>
-<li>⌘Command + ⌥Option + M + H：隐藏所有活动窗口</li>
-<li>⌘Command + ⌃Control + Q：锁屏</li>
-<li>⌘Command + ⇧Shift + Q：退出当前登陆账户会有提示</li>
-<li>⌘Command + ⇧Shift + ⌥Option + Q：强制退出当前账户</li>
-</ul>
-]]></content>
-      <categories>
-        <category>快捷键</category>
-      </categories>
-      <tags>
-        <tag>command</tag>
-        <tag>option</tag>
-        <tag>control</tag>
-        <tag>快捷键</tag>
       </tags>
   </entry>
   <entry>
