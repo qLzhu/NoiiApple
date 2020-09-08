@@ -271,76 +271,6 @@
       </tags>
   </entry>
   <entry>
-    <title>快捷键-常用快捷键清单</title>
-    <url>/43680/</url>
-    <content><![CDATA[<p>使用快捷键是提高我们工作效率最明显的办法之一，这里为大家列出了日常使用 MacOS 系统，用到最多的几个快捷键。如果想了解更多快捷键，请到 <a href="https://support.apple.com/zh-cn/HT201236">苹果官网</a> 进行查看。</p>
-<p>这么多快捷键全部记住是不可能的，最有效的办法就是用那个查那个！</p>
-<blockquote class="blockquote-center">
-<p>懒得搜快捷键的，推荐安装：<a href="https://www.ergonis.com/products/keycue/">CheatSheet.app</a>，长按 ⌘Command 可调出当前App的所有快捷键列表</p>
-
-</blockquote>
-<a id="more"></a>
-
-<h3 id="输入法"><a href="#输入法" class="headerlink" title="输入法"></a>输入法</h3><ul>
-<li>⌃Control + 空格键：系统默认的切换输入法快捷键</li>
-<li>中/英键：切换输入法</li>
-<li>⌘Command + ⌃Control + Space空格：字体检查器</li>
-</ul>
-<h3 id="文稿"><a href="#文稿" class="headerlink" title="文稿"></a>文稿</h3><ul>
-<li>⌘Command + C：复制</li>
-<li>⌘Command + X：剪切</li>
-<li>⌘Command + V：粘贴</li>
-<li>⌘Command + S：保存</li>
-<li>⌘Command + P：打印</li>
-</ul>
-<h3 id="访达"><a href="#访达" class="headerlink" title="访达"></a>访达</h3><ul>
-<li>⌘Command + E：推出磁盘或卷宗</li>
-<li>⌘Command + T：新建标签页</li>
-<li>⌘Command + N：新建窗口</li>
-<li>⌘Command + C：复制</li>
-<li>⌘Command + V：粘贴</li>
-<li>⌘Command + D：创建副本</li>
-<li>⌘Command + ⌥Option + V：剪切式粘贴</li>
-<li>⌘Command + I：显示文件简介</li>
-<li>⌘Command + ⇧Shift + N：新建空白文件夹</li>
-<li>⌘Command + ⇧Shift + G：前往执行文件夹</li>
-<li>⌘Command + ⇧Shift + .：显示隐藏文件</li>
-<li>⌘Command + ⌃Control + T：将指定文件添加到访达侧边栏</li>
-</ul>
-<h3 id="程序坞"><a href="#程序坞" class="headerlink" title="程序坞"></a>程序坞</h3><ul>
-<li>⌘Command + ⌥Option + D：显示或隐藏程序坞</li>
-</ul>
-<h3 id="废纸篓"><a href="#废纸篓" class="headerlink" title="废纸篓"></a>废纸篓</h3><ul>
-<li>⌘Command + ⌫ Delete：将所选项移到废纸篓</li>
-<li>⌘Command + ⇧Shift + ⌫ Delete：删除废纸篓所有内容</li>
-<li>⌘Command + ⇧Shift + ⌥Option + ⌫ Delete：删除内容不显示提示框</li>
-</ul>
-<h3 id="通用快捷键"><a href="#通用快捷键" class="headerlink" title="通用快捷键"></a>通用快捷键</h3><ul>
-<li>⌘Command + W：关闭窗口</li>
-<li>⌘Command + ⇥Tab：切换程序</li>
-<li>⌘Command + Q：退出程序</li>
-<li>⌘Command + 空格space：打开聚焦搜索框</li>
-<li>⌘Command +  M：最小化窗口</li>
-<li>⌘Command + ⌥Option + H：最小化当前程序的所有窗口</li>
-<li>⌘Command +  H：隐藏</li>
-<li>⌘Command + ⌥Option + H：隐藏其它</li>
-<li>⌘Command + ⌥Option + M + H：隐藏所有活动窗口</li>
-<li>⌘Command + ⌃Control + Q：锁屏</li>
-<li>⌘Command + ⇧Shift + Q：退出当前登陆账户会有提示</li>
-<li>⌘Command + ⇧Shift + ⌥Option + Q：强制退出当前账户</li>
-</ul>
-]]></content>
-      <categories>
-        <category>快捷键</category>
-      </categories>
-      <tags>
-        <tag>command</tag>
-        <tag>option</tag>
-        <tag>control</tag>
-        <tag>快捷键</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基础知识-输入法</title>
     <url>/34408/</url>
     <content><![CDATA[<p>在使用 Mac 电脑时，只要您写作或者编辑文档，肯定避免不了使用输入法，基础的操作相信大家都会。例如：</p>
@@ -411,6 +341,76 @@
         <tag>输入法</tag>
         <tag>拼音</tag>
         <tag>国际音标</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快捷键-常用快捷键清单</title>
+    <url>/43680/</url>
+    <content><![CDATA[<p>使用快捷键是提高我们工作效率最明显的办法之一，这里为大家列出了日常使用 MacOS 系统，用到最多的几个快捷键。如果想了解更多快捷键，请到 <a href="https://support.apple.com/zh-cn/HT201236">苹果官网</a> 进行查看。</p>
+<p>这么多快捷键全部记住是不可能的，最有效的办法就是用那个查那个！</p>
+<blockquote class="blockquote-center">
+<p>懒得搜快捷键的，推荐安装：<a href="https://www.ergonis.com/products/keycue/">CheatSheet.app</a>，长按 ⌘Command 可调出当前App的所有快捷键列表</p>
+
+</blockquote>
+<a id="more"></a>
+
+<h3 id="输入法"><a href="#输入法" class="headerlink" title="输入法"></a>输入法</h3><ul>
+<li>⌃Control + 空格键：系统默认的切换输入法快捷键</li>
+<li>中/英键：切换输入法</li>
+<li>⌘Command + ⌃Control + Space空格：字体检查器</li>
+</ul>
+<h3 id="文稿"><a href="#文稿" class="headerlink" title="文稿"></a>文稿</h3><ul>
+<li>⌘Command + C：复制</li>
+<li>⌘Command + X：剪切</li>
+<li>⌘Command + V：粘贴</li>
+<li>⌘Command + S：保存</li>
+<li>⌘Command + P：打印</li>
+</ul>
+<h3 id="访达"><a href="#访达" class="headerlink" title="访达"></a>访达</h3><ul>
+<li>⌘Command + E：推出磁盘或卷宗</li>
+<li>⌘Command + T：新建标签页</li>
+<li>⌘Command + N：新建窗口</li>
+<li>⌘Command + C：复制</li>
+<li>⌘Command + V：粘贴</li>
+<li>⌘Command + D：创建副本</li>
+<li>⌘Command + ⌥Option + V：剪切式粘贴</li>
+<li>⌘Command + I：显示文件简介</li>
+<li>⌘Command + ⇧Shift + N：新建空白文件夹</li>
+<li>⌘Command + ⇧Shift + G：前往执行文件夹</li>
+<li>⌘Command + ⇧Shift + .：显示隐藏文件</li>
+<li>⌘Command + ⌃Control + T：将指定文件添加到访达侧边栏</li>
+</ul>
+<h3 id="程序坞"><a href="#程序坞" class="headerlink" title="程序坞"></a>程序坞</h3><ul>
+<li>⌘Command + ⌥Option + D：显示或隐藏程序坞</li>
+</ul>
+<h3 id="废纸篓"><a href="#废纸篓" class="headerlink" title="废纸篓"></a>废纸篓</h3><ul>
+<li>⌘Command + ⌫ Delete：将所选项移到废纸篓</li>
+<li>⌘Command + ⇧Shift + ⌫ Delete：删除废纸篓所有内容</li>
+<li>⌘Command + ⇧Shift + ⌥Option + ⌫ Delete：删除内容不显示提示框</li>
+</ul>
+<h3 id="通用快捷键"><a href="#通用快捷键" class="headerlink" title="通用快捷键"></a>通用快捷键</h3><ul>
+<li>⌘Command + W：关闭窗口</li>
+<li>⌘Command + ⇥Tab：切换程序</li>
+<li>⌘Command + Q：退出程序</li>
+<li>⌘Command + 空格space：打开聚焦搜索框</li>
+<li>⌘Command +  M：最小化窗口</li>
+<li>⌘Command + ⌥Option + H：最小化当前程序的所有窗口</li>
+<li>⌘Command +  H：隐藏</li>
+<li>⌘Command + ⌥Option + H：隐藏其它</li>
+<li>⌘Command + ⌥Option + M + H：隐藏所有活动窗口</li>
+<li>⌘Command + ⌃Control + Q：锁屏</li>
+<li>⌘Command + ⇧Shift + Q：退出当前登陆账户会有提示</li>
+<li>⌘Command + ⇧Shift + ⌥Option + Q：强制退出当前账户</li>
+</ul>
+]]></content>
+      <categories>
+        <category>快捷键</category>
+      </categories>
+      <tags>
+        <tag>command</tag>
+        <tag>option</tag>
+        <tag>control</tag>
+        <tag>快捷键</tag>
       </tags>
   </entry>
   <entry>
@@ -663,6 +663,45 @@
       </tags>
   </entry>
   <entry>
+    <title>系统指令-启动web服务的方法</title>
+    <url>/43447/</url>
+    <content><![CDATA[<p>MacOS 系统对开发很友好，默认集成了 Python2 和 PHP 语言。我们可以利用它们开启 web 服务，给远在它处或局域网下的朋友们共享我们的目录。注意：朋友只能在线一个进行访问，多位朋友则不行。</p>
+<blockquote>
+<p>至于为什么不用系统内置的「隔空投送」？<br>那是因为，隔空投送对文件大小和系统都有要求。例如您想给使用 Android 或者 window 朋友传输文件，难道还要使用隔空投送嘛…</p>
+</blockquote>
+<p>开启步骤：</p>
+<ol>
+<li>打开终端（<a href="/881/" title="请查阅“基础知识-终端工具”">请查阅“基础知识-终端工具”</a>）。</li>
+<li>输入 <mark class="label default">cd</mark> 命令进到要共享的目录。</li>
+<li>选择下述任何一个命令进行执行。</li>
+<li>把 <a href="https://localhost:8000/">https://localhost:8000</a> 中的 localhost 改为自己的 <a href="#">Post not found: IPv4 系统服务-查看本机IP地址</a> 地址，分享给朋友。</li>
+<li>让朋友用浏览器打开您分享的链接。</li>
+<li>关闭终端或按 <mark class="label default">⌃Control + C</mark>终结web服务。</li>
+</ol>
+<img src="/43447/ipv4.jpg" class="">
+<a id="more"></a>
+
+<p>Python</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8000</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="comment"># 需要先升级 python 才可使用 python3 命令</span></span><br><span class="line">python3 -m http.server --cgi 8000</span><br></pre></td></tr></table></figure>
+
+<p>PHP</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">php -S localhost:8000</span><br></pre></td></tr></table></figure>
+
+<p>前端程序猿可以使用 npm 安装 serve 服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g serve</span><br><span class="line"></span><br><span class="line"># 启动 web 服务命令，无需写端口号</span><br><span class="line"># 默认 5000 端口</span><br><span class="line">serve</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>www</tag>
+        <tag>web</tag>
+        <tag>localhost</tag>
+        <tag>php</tag>
+        <tag>python2</tag>
+        <tag>https://localhost:8000</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>系统指令-查看局域网下的IPv4地址</title>
     <url>/62974/</url>
     <content><![CDATA[<p>查看 IPv4 地址之前，我们先科普下基础知识。什么是 IPv4？想明白什么是 IPv4，就得先明白什么是 IP。IP 是网际协议或互联网协议，是用在 TCP/IP 协议簇中的网络层协议。另外 IP 有一个非常重要的属性，就是给每台计算机和设备规定一个地址，也就是我们俗称的 IP 地址。通俗点理解就是两个人做生意需要先约法三章签订协议，然后再写上联系自己的唯一方式比较类似。而 IPv4 表示IP协议的第四个版本 Internet Protocol version 4。</p>
@@ -701,45 +740,6 @@
         <tag>局域网IP</tag>
         <tag>192.168.0.0</tag>
         <tag>IPv4</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>系统指令-启动web服务的方法</title>
-    <url>/43447/</url>
-    <content><![CDATA[<p>MacOS 系统对开发很友好，默认集成了 Python2 和 PHP 语言。我们可以利用它们开启 web 服务，给远在它处或局域网下的朋友们共享我们的目录。注意：朋友只能在线一个进行访问，多位朋友则不行。</p>
-<blockquote>
-<p>至于为什么不用系统内置的「隔空投送」？<br>那是因为，隔空投送对文件大小和系统都有要求。例如您想给使用 Android 或者 window 朋友传输文件，难道还要使用隔空投送嘛…</p>
-</blockquote>
-<p>开启步骤：</p>
-<ol>
-<li>打开终端（<a href="/881/" title="请查阅“基础知识-终端工具”">请查阅“基础知识-终端工具”</a>）。</li>
-<li>输入 <mark class="label default">cd</mark> 命令进到要共享的目录。</li>
-<li>选择下述任何一个命令进行执行。</li>
-<li>把 <a href="https://localhost:8000/">https://localhost:8000</a> 中的 localhost 改为自己的 <a href="#">Post not found: IPv4 系统服务-查看本机IP地址</a> 地址，分享给朋友。</li>
-<li>让朋友用浏览器打开您分享的链接。</li>
-<li>关闭终端或按 <mark class="label default">⌃Control + C</mark>终结web服务。</li>
-</ol>
-<img src="/43447/ipv4.jpg" class="">
-<a id="more"></a>
-
-<p>Python</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8000</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="comment"># 需要先升级 python 才可使用 python3 命令</span></span><br><span class="line">python3 -m http.server --cgi 8000</span><br></pre></td></tr></table></figure>
-
-<p>PHP</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">php -S localhost:8000</span><br></pre></td></tr></table></figure>
-
-<p>前端程序猿可以使用 npm 安装 serve 服务</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g serve</span><br><span class="line"></span><br><span class="line"># 启动 web 服务命令，无需写端口号</span><br><span class="line"># 默认 5000 端口</span><br><span class="line">serve</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>系统指令</category>
-      </categories>
-      <tags>
-        <tag>www</tag>
-        <tag>web</tag>
-        <tag>localhost</tag>
-        <tag>php</tag>
-        <tag>python2</tag>
-        <tag>https://localhost:8000</tag>
       </tags>
   </entry>
   <entry>
