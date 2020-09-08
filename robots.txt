@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://www.noiiapple.com/sitemap.xml
+Sitemap: https://www.noiiapple.com/baidusitemap.xml

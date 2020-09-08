@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#222">
+  <meta name="google-site-verification" content="6BjKTRWhfD_KmT8CoJhEMtXp5RdD18GZflC0llCd7h0">
+  <meta name="baidu-site-verification" content="joZHpTfaSD">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.noiiapple.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="只要使用您经常使用电脑，肯定或多或少听说过电脑终端。并且遇到稍微复杂点的电脑故障时，教程或者案例总是教我们如何如何在终端中操作、及其如何如何终结。那么，终端到底是什么？   要讲明终端是什么，首先我们需要了解电脑系统的组成。通俗点的说，操作系统由两部分组成，分别是内核和用户式的交互式界面。内核负责系统的全部逻辑操作，由非常多的命令组成。这部分是系统正常运行的基础，不与用户直接接触。而交互式界面则统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础知识-终端工具的基本使用">
+<meta property="og:url" content="https://www.noiiapple.com/881/index.html">
+<meta property="og:site_name" content="NoiiApple">
+<meta property="og:description" content="只要使用您经常使用电脑，肯定或多或少听说过电脑终端。并且遇到稍微复杂点的电脑故障时，教程或者案例总是教我们如何如何在终端中操作、及其如何如何终结。那么，终端到底是什么？   要讲明终端是什么，首先我们需要了解电脑系统的组成。通俗点的说，操作系统由两部分组成，分别是内核和用户式的交互式界面。内核负责系统的全部逻辑操作，由非常多的命令组成。这部分是系统正常运行的基础，不与用户直接接触。而交互式界面则统">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.noiiapple.com/881/terminal.jpg">
+<meta property="article:published_time" content="2020-08-19T04:02:37.000Z">
+<meta property="article:modified_time" content="2020-08-29T09:49:03.124Z">
+<meta property="article:author" content="Mr.QinLzhu">
+<meta property="article:tag" content="terminal">
+<meta property="article:tag" content="shell">
+<meta property="article:tag" content="bash">
+<meta property="article:tag" content="zsh">
+<meta property="article:tag" content="如何打开终端工具">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.noiiapple.com/881/terminal.jpg">
+
+<link rel="canonical" href="https://www.noiiapple.com/881/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+
+<link href="https://fonts.loli.net/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.loli.net/css?family=Roboto+Slab" rel="stylesheet">
+
+<script>
+	let OriginTitile = document.title;
+	let titleTime;
+	document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      document.title = '(つェ⊂)我藏好了哦~ ' + OriginTitile;
+      clearTimeout(titleTime);
+    }
+    else {
+      document.title = '(*´∇｀*) 被你发现啦~ ' + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+	});
+</script>
+  <title>基础知识-终端工具的基本使用 | NoiiApple</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">NoiiApple</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">MacOS Tips...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">59</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部文章<span class="badge">17</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E6%89%93%E5%BC%80%E6%96%B9%E5%BC%8F"><span class="nav-number">1.</span> <span class="nav-text">终端打开方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E5%88%B6shell%E6%8F%90%E7%A4%BA%E7%AC%A6"><span class="nav-number">2.</span> <span class="nav-text">定制shell提示符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E6%8D%A2shell%E8%A7%A3%E9%87%8A%E5%99%A8"><span class="nav-number">3.</span> <span class="nav-text">切换shell解释器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85Command-line-tools"><span class="nav-number">4.</span> <span class="nav-text">安装Command line tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tab%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8"><span class="nav-number">5.</span> <span class="nav-text">tab自动补全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85oh-my-zsh"><span class="nav-number">6.</span> <span class="nav-text">安装oh-my-zsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-number">7.</span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-number">8.</span> <span class="nav-text">快捷键</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mr.QinLzhu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Mr.QinLzhu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://siyou.coding.net/public/noiiapple/noiiapple/git" title="Coding → https:&#x2F;&#x2F;siyou.coding.net&#x2F;public&#x2F;noiiapple&#x2F;noiiapple&#x2F;git" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:qinlzhu@outlook.com" title="E-Mail → mailto:qinlzhu@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.noiiapple.com/881/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Mr.QinLzhu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NoiiApple">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基础知识-终端工具的基本使用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发布时间</span>
+
+              <time title="创建时间：2020-08-19 12:02:37" itemprop="dateCreated datePublished" datetime="2020-08-19T12:02:37+08:00">2020-08-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新时间</span>
+                <time title="修改时间：2020-08-29 17:49:03" itemprop="dateModified" datetime="2020-08-29T17:49:03+08:00">2020-08-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">基础知识</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/881/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/881/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>只要使用您经常使用电脑，肯定或多或少听说过电脑终端。并且遇到稍微复杂点的电脑故障时，教程或者案例总是教我们如何如何在终端中操作、及其如何如何终结。那么，终端到底是什么？</p>
+<img src="/881/terminal.jpg" class="">
+
+<p>要讲明终端是什么，首先我们需要了解电脑系统的组成。通俗点的说，操作系统由两部分组成，分别是内核和用户式的交互式界面。内核负责系统的全部逻辑操作，由非常多的命令组成。这部分是系统正常运行的基础，不与用户直接接触。而交互式界面则统指的是我们常使用的程序… …</p>
+<p>如果我们想修改系统内核的某些命令及其逻辑，怎么办？这时就需要用到「终端」了，它是内核与交互式界面连接的一座桥梁。允许用户在交互式界面上打开一个叫「Terminal.app」的应用程序，在其中输入命令，进而系统给出相应的反馈。因此，终端实际允许用户间接控制系统内核，理论上能够控制一切。</p>
+<a id="more"></a>
+
+<h2 id="终端打开方式"><a href="#终端打开方式" class="headerlink" title="终端打开方式"></a>终端打开方式</h2><ol>
+<li><mark class="label default">⌘Command + 空格键</mark> 调出聚焦搜索，然后键入「terminal」或「终端」关键字。</li>
+<li>请依次点按 “访达-应用程序-实用工具-终端.app”。</li>
+<li>四指从外向里抓触控板，在启动台的「实用工具」里找到。</li>
+</ol>
+<h2 id="定制shell提示符"><a href="#定制shell提示符" class="headerlink" title="定制shell提示符"></a>定制shell提示符</h2><p>终端中的每个窗口都代表着一个 shell 进程的实例。打开终端时，窗口内会相应的一些提示符，这些提示符跟您对终端和 shell 的设置有关。通常情况下是下面的样子：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Admin@MacBook~Desktop/ $</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Admin 用户名</li>
+<li>MacBook 电脑名称</li>
+<li>~Desktop/ 当前所在目录</li>
+</ul>
+<p>上述提示符在系统内的配置是 <mark class="label default">export PS1=“\u</mark>，通过修改 shell 脚本的解释器，可以对其进行更改。MacOS 系统默认的是 bash 登录式脚本解释器，所以您需要修改的是 <mark class="label default">~/.bash_profile</mark>。PS1后的参数：</p>
+<div class="note "><p>除了 bash 解释器外，系统还内置了一些其它的解析器，使用 <mark class="label default">cat /etc/shells</mark> 或 <mark class="label default">echo $SHELL</mark> 命令可对其枚举。</p>
+</div>
+
+<ul>
+<li>\W：当前工作目录名的最后部分</li>
+<li>\w：完整目录名</li>
+<li>$：显示”$”字符，超级用户显示一个”#”字符</li>
+<li>\l：当前终端设备名</li>
+<li>\d：当前日期</li>
+<li>\t：当前时间</li>
+<li>\h：hostname</li>
+</ul>
+<p>修改完成后，需要通过 <mark class="label default">source ~/.bash_profile</mark> 对其重启，才可生效。如果您还想修改终端内的用户名，可使用 <mark class="label default">sudo scutil --set HostName yourname</mark> 命令。</p>
+<h2 id="切换shell解释器"><a href="#切换shell解释器" class="headerlink" title="切换shell解释器"></a>切换shell解释器</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Command-line-tools"><a href="#安装Command-line-tools" class="headerlink" title="安装Command line tools"></a>安装Command line tools</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">xcode-select -–install</span><br></pre></td></tr></table></figure>
+
+<p>在弹出的界面点 install 同意即可（经常使用VPN工具的，记得要关闭）</p>
+<a href="#">Post not found: 系统命令-xcode-select-install 关于 Command line tools 的解释</a>
+
+<h2 id="tab自动补全"><a href="#tab自动补全" class="headerlink" title="tab自动补全"></a>tab自动补全</h2><p>打开 Terminal 输入 <mark class="label default">nano .inputrc</mark>，再输入下述内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> completion-ignore-case on</span><br><span class="line"><span class="built_in">set</span> show-all-if-ambiguous on</span><br><span class="line">TAB: menu-complete</span><br></pre></td></tr></table></figure>
+
+<p>完成后按 <mark class="label default">⌃Control ＋ o</mark> 键保存关闭、重启。</p>
+<h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh</span><br><span class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换shell解释器为zsh</span></span><br><span class="line">chsh -s $(<span class="built_in">which</span> zsh)</span><br></pre></td></tr></table></figure>
+
+<p>完成后重启终端。卸载 oh-my-zsh 直接在终端执行 <mark class="label default">uninstall_oh_my_zsh</mark> 进行卸载！并且它内置了很多 Plugins，默认开启的是 git，您也可以按照 <a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins</a> 所示开启和查看。</p>
+<p>更改主题可到 <a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</a> 查阅，看好那个主题后，可直接到 ~/.zshrc 内修改 <mark class="label default">ZSH_THEME=</mark> 模块，再 <mark class="label default">source ~/.zshrc</mark> 重启下，即可完成对主题变更。</p>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><mark class="label default">pwd</mark> 以绝对路径的方式显示用户当前所在的工作目录位置
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line"><span class="comment"># /Users/***/Downloads</span></span><br></pre></td></tr></table></figure>
+
+<mark class="label default">cd</mark> 进到指定目录或文件夹
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入用户根目录</span></span><br><span class="line"><span class="built_in">cd</span></span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入系统根目录</span></span><br><span class="line"><span class="built_in">cd</span> /</span><br><span class="line"></span><br><span class="line"><span class="comment"># 回到上次所在目录</span></span><br><span class="line"><span class="built_in">cd</span> -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 回到上一级目录</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">touch</mark> 创建文件
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch ~/a.txt</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">cp</mark> 拷贝文件或目录
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将文件复制到用户根目录下</span></span><br><span class="line">cp empty ~</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制目录下所有以 js 结尾的文件到 Downloads/Js 目录下</span></span><br><span class="line"><span class="comment"># 如果 Downloads 目录下没有 Js 文件夹的话，将会自动创建一个</span></span><br><span class="line">cp *.js ~/Downloads/Js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加 -r 选项，复制目录下所有的文件以及子目录</span></span><br><span class="line">cp -r . ~/Downloads/Js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制一个文件并且重新命名，然后移动到指定位置</span></span><br><span class="line">cp empty ~/Downloads/newEmpty</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">mv</mark> 改变文件名或所在目录的位置
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 移动文件或目录到指定位置</span></span><br><span class="line">mv empty ~/Downloads/empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先给文件或目录重新命名，然后再移动到指定位置</span></span><br><span class="line">mv empty ~/Downloads/newEmpty</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">rm</mark> 用来删除文件和目录，需要格外慎重。
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 普通的删除文件</span></span><br><span class="line">rm ~/Downloads/empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归删除目录下所有的文件以及子目录</span></span><br><span class="line">rm -r empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制删除</span></span><br><span class="line">rm -f ~/Downloads/empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归强制删除</span></span><br><span class="line">rm -rf ~/Downloads/</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">mkdir</mark> 创建目录
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建一个空白的目录</span></span><br><span class="line">mkdir empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个有子目录的目录</span></span><br><span class="line"><span class="comment"># -p 选项是，如果要创建的目录的父级目录不存在的话，一并创建</span></span><br><span class="line">mkdir -p ~/Downloads/New/empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一次性创建多个目录</span></span><br><span class="line">mkdir emptyA emptyA ~/Downloads/emptyC</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一次性创建多个目录，并且某个要创建的目录拥有多个字目录</span></span><br><span class="line">mkdir emptyA emptyB/&#123;emptyB-A, emptyB-B, emptyB-C&#125;</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">rmdir</mark> 删除空白文件目录
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 删除空白文件目录，如果目录下有东西是删除不了的</span></span><br><span class="line">rmdir empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加 -p 选项</span></span><br><span class="line"><span class="comment"># 如果删除了某个目录，父目录就变为空目录的话，就一块删除</span></span><br><span class="line">rmdir ~/Downloads/empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除多个目录</span></span><br><span class="line">rmdir emptyA emptyB</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">ls</mark> 枚举目标目录中所有的子目录和文件，注意参数的大小写。
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 列出当前目录下非隐藏的文件和目录，等价于“ls -C（注意：大写）”</span></span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出目录下的所有文件，包括以“.”开头的隐含文件</span></span><br><span class="line">ls -a</span><br><span class="line">ls -all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 与上面的“ls -a”命令几乎相同，只不过是此命令不显示“.（当前目录）”和“..（父级目录）”这两个</span></span><br><span class="line">ls -A</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前目录下非隐藏的文件和目录，并用逗号“,”分割</span></span><br><span class="line">ls -m</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前目录下所有的文件或目录详细信息</span></span><br><span class="line">ls -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出指定文件的详细信息</span></span><br><span class="line">ls -l empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用文件或目录修改的时间进行排序</span></span><br><span class="line">ls -t</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归显示文件，会把此根目录下的所有文件都显示出来</span></span><br><span class="line">ls -R</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">kill</mark> 结束指定进程
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># kill 9 强制终止进程</span></span><br><span class="line"><span class="built_in">kill</span> 9 40142</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">clear</mark> 清空屏幕信息
+
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>这里只列出几个常用的，更多请查阅 “帮助 - 终端帮助 - 键盘快捷键”</p>
+<ul>
+<li><mark class="label default">⌘Command + N</mark>：再打开一个终端</li>
+<li><mark class="label default">⌘Command + T</mark>：新建窗口</li>
+<li><mark class="label default">⇧Shift + ⌘Command + K</mark>：新建远程连接</li>
+<li><mark class="label default">⌃Control + A</mark>：光标移到行开头</li>
+<li><mark class="label default">⌃Control + E</mark>：光标移到行结尾</li>
+<li><mark class="label default">⌃Control + U</mark>：光标位置删除到行开头</li>
+<li><mark class="label default">⌃Control + K</mark>：光标位置删除到行尾</li>
+<li><mark class="label default">⌃Control + W</mark>：删除光标位置左侧一个单词</li>
+<li><mark class="label default">⌥option + D</mark>：删除光标位置右侧一个单词（终端 - 偏好设置 - 描述文件 - 键盘 - 勾选将option键用作Meta键）</li>
+<li><mark class="label default">⌥option + 左箭头</mark>：光标前移一个单词</li>
+<li><mark class="label default">⌥option + 右箭头</mark>：光标后移一个单词</li>
+<li><mark class="label default">⌘Command + .</mark>：中断（跳转到下一行重新开始）</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Mr.QinLzhu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.noiiapple.com/881/" title="基础知识-终端工具的基本使用">https://www.noiiapple.com/881/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/terminal/" rel="tag"># terminal</a>
+              <a href="/tags/shell/" rel="tag"># shell</a>
+              <a href="/tags/bash/" rel="tag"># bash</a>
+              <a href="/tags/zsh/" rel="tag"># zsh</a>
+              <a href="/tags/%E5%A6%82%E4%BD%95%E6%89%93%E5%BC%80%E7%BB%88%E7%AB%AF%E5%B7%A5%E5%85%B7/" rel="tag"># 如何打开终端工具</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2296/" rel="prev" title="系统指令-删除程序的卸载残留">
+      <i class="fa fa-chevron-left"></i> 系统指令-删除程序的卸载残留
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/17717/" rel="next" title="故障问题-app程序损坏">
+      故障问题-app程序损坏 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-hand-point-right"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr.QinLzhu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">14k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"fvBXiThyTuo31WbLeXU8FbnK-gzGzoHsz","appKey":"BtBG3bqbx6AkgY741SxPHyc8","placeholder":"评论时，请填写昵称和邮箱，回复会以邮件的形式发送给您！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>基础知识-分屏浏览</title>
+    <url>/63710/</url>
+    <content><![CDATA[<p>借助 MacOS 系统的分屏浏览功能，我们能够满屏显示两个应用。边编辑文案边追剧、边编程边看效果、边 <mark class="label default">⌘Command + C</mark> 边 <mark class="label default">⌘Command + V</mark> 岂不妙哉！该功能对系统版本的要求是 10.11.6+。</p>
+<p>分屏浏览步骤：</p>
+<ol>
+<li>鼠标长按或长停留在应用程序左上角<img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/osx/el-cap-split-screen-icon.png" style="display: inline-block;margin: 0 2px;width: 16px;vertical-align: middle;">图标上</li>
+<li>从提示框内选取“将窗口拼贴到屏幕左侧”或“将窗口拼贴到屏幕右侧”</li>
+<li>在视图空白的另一区域选择应用程序缩略窗口</li>
+<li>OK</li>
+</ol>
+<blockquote>
+<p>隐士操作：<br>拖动视图中间的竖线，能改变两个程序窗口的大小；<br>拖拽文字、链接或图片，能够拷贝到另一窗口；<br>四指向上滑动，还能拖拽视图到另一程序的全屏模式窗口上，开启分屏浏览功能。</p>
+</blockquote>
+<p>退出分屏浏览，首先鼠标指针向上滑动，然后再点按任一窗口中的<img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/osx/el-cap-split-screen-exit-icon.png" style="display: inline-block;margin: 0 2px;width: 16px;vertical-align: middle;">图标。</p>
+]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>分屏</tag>
+        <tag>Split View</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基础知识-截屏和录屏视频</title>
+    <url>/44965/</url>
+    <content><![CDATA[<p>MacOS 系统默认内置了截图和录屏功能，都集成在了 <mark class="label default">“截屏.app”</mark> 上。因为它是系统的一部分，所以能够跟 MacOS 高度融合。一般情况下，我们不需要先打开 <mark class="label default">“截屏.app”</mark>，就可以直接使用系统预设的快捷键，进行截屏或者录屏。但是该App有个短处就是没办法长截图和录制电脑自己的声音。</p>
+<a id="more"></a>
+
+<h2 id="截屏"><a href="#截屏" class="headerlink" title="截屏"></a>截屏</h2><mark class="label default">“截屏.app”</mark> 位于<mark class="label default">“~/应用程序/实用工具/”</mark>内。默认情况下，我们的截图会以<mark class="label default">“截屏\[日期\]\[时间\].png”</mark>为名称存储到桌面。
+
+<p>快捷键：<br>系统预设的快捷键可到“系统偏好设置-键盘-快捷键-截屏”内查看</p>
+<ul>
+<li><mark class="label success">⌘Command + ⇧Shift + 3</mark> 截取整个屏幕</li>
+<li><mark class="label success">⌘Command + ⇧Shift + 4</mark> 截取所选区域</li>
+<li><mark class="label success">⌘Command + ⇧Shift + 6</mark> 截取 TouchBar 屏幕
+
+</li>
+</ul>
+<mark class="label success">⌃Control</mark> 键跟上述快捷键组合使用，可把截图保存到剪切板，跟别人聊天或者粘贴到文稿时非常有用。<br>
+
+<mark class="label success">⌘Command + ⇧Shift + 4</mark> + <mark class="label success">“空格键”</mark>可截取App窗口。
+
+<h2 id="录屏"><a href="#录屏" class="headerlink" title="录屏"></a>录屏</h2><p>快捷键：</p>
+<ul>
+<li><mark class="label success">⌘Command + ⇧Shift + 5</mark> 选择全屏录制或者局部录制
+
+</li>
+</ul>
+<p><img src="%E5%BD%95%E5%B1%8F.png"></p>
+<mark class="label default">“截屏.app”</mark>录制的视频文件会比较大。这时你可以使用<mark class="label default">“QuickTime Player.app”</mark>进行录屏，在保存时选择其它的分辨率导出。
+
+<p><img src="QuickTime.png"></p>
+<h2 id="高级部分"><a href="#高级部分" class="headerlink" title="高级部分"></a>高级部分</h2><p>我们可以使用代码，对<mark class="label default">“截屏.app”</mark>的默认参数及其选项进行更改，例如：截屏时系统默认保存的图片是 PNG 格式，我们可以使用相关代码把它改为 JPG 格式。</p>
+<p><strong>操作步骤：</strong></p>
+<ol>
+<li>打开<mark class="label default">“terminal.app”</mark></li>
+<li>根据自己的需求，复制下方相关代码，粘贴到<mark class="label default">“terminal.app”</mark>内回车确定</li>
+</ol>
+<p>更改截屏图片的保存位置</p>
+<ul>
+<li>下述命令整句话的意思是：保存到当用户目录下的桌面里并重启服务</li>
+<li><mark class="label default">~/Desktop</mark>
+<ul>
+<li><mark class="label default">~/</mark> 表示当前用户的根目录（PS：访达侧边栏有个🏠图标，跟你用户名组合的目录就是）</li>
+<li><mark class="label default">Desktop</mark> 当前用户目录下的桌面
+
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.screencapture location ~/Desktop &amp;&amp; killall SystemUIServer</span><br></pre></td></tr></table></figure>
+
+<p>更改截屏图片格式</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.screencapture <span class="built_in">type</span> jpg &amp;&amp; killall SystemUIServer</span><br></pre></td></tr></table></figure>
+
+<p>更改截屏图片的命名方式</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.screencapture name <span class="string">&quot;截屏要保存的名称&quot;</span> &amp;&amp; killall SystemUIServer</span><br></pre></td></tr></table></figure>
+
+<p>去除App窗口截屏时的阴影效果</p>
+<ul>
+<li>还原的话，<mark class="label default">true</mark> 改为 <mark class="label default">false</mark> 即可</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.screencapture <span class="built_in">disable</span>-shadow -bool <span class="literal">true</span> &amp;&amp; killall SystemUIServer</span><br></pre></td></tr></table></figure>
+
+<p>自定义截屏延迟时间、名称和格式</p>
+<ul>
+<li><mark class="label default">-T 3</mark> 表示延迟3秒再截屏</li>
+<li><mark class="label default">MacbookPro.jpg</mark> 图片名称及其格式</li>
+<li>注意：该命令在哪个位置执行的，图片就保存在哪（打开终端没 <mark class="label default">cd</mark> 的话，就是用户的根目录【<mark class="label default">~</mark>】）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">screencapture -T 3 MacbookPro.jpg</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>截屏</tag>
+        <tag>录制视频</tag>
+        <tag>MacOS如何截屏</tag>
+        <tag>⌘Command+⇧Shift+5</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基础知识-程序坞的基本使用</title>
+    <url>/12374/</url>
+    <content><![CDATA[<p>MacOS 系统的程序坞，在 10.13.2 版本之前叫 Dock，是系统设计元素里的一个标志性设计。具体功能跟 Windows 的任务栏比较类似，都是为了更加便捷的使用 App 所设计入口。</p>
+<img src="/12374/%E7%A8%8B%E5%BA%8F%E5%9D%9E.png" class="" title="MacOS程序坞">
+<a id="more"></a>
+
+<h3 id="“接力”功能部分"><a href="#“接力”功能部分" class="headerlink" title="“接力”功能部分"></a>“接力”功能部分</h3><p>当你在 iPhone 或 iPad 登陆的是同一 ID，并开启了接力功能（PS：设置-通用-隔空播放与接力-接力）的话。使用浏览器浏览网页时，MacOS 的程序坞最左侧就会显示 MacOS 默认的浏览器图标（PS：系统偏好设置-通用-默认网页浏览器），打开该图标即可继续浏览在手机上观看的内容。</p>
+<h3 id="App-固定区"><a href="#App-固定区" class="headerlink" title="App 固定区"></a>App 固定区</h3><p>“Safari浏览器”到“访达”的这部分，是App固定区域，我们可以在此区域添加、删除或移动相应的App（PS：注意“访达”是不能删除或者移动的）。还可以结合快捷键执行一些其它的操作，例如：</p>
+<ul>
+<li><mark class="label default">⌃Control + Fn + F3</mark> 快速聚焦到程序坞。</li>
+<li><mark class="label default">⌃Control</mark> 显示当前App的菜单选项，跟鼠标右键的效果相同。</li>
+<li><mark class="label default">⌃Control + ⌥Option</mark>  显示“强制退出”选项。</li>
+<li><mark class="label default">⌥Option</mark>  隐藏或显示App的窗口。</li>
+<li><mark class="label default">⌥Option + ⌘Command</mark>  隐藏或显示除当前App以外的所有窗口。</li>
+<li><mark class="label default">⌘Command</mark> 在“访达”中显示App。
+
+</li>
+</ul>
+<h3 id="分隔线"><a href="#分隔线" class="headerlink" title="分隔线"></a>分隔线</h3><p>分割线在程序坞上起到分离功能区域的作用外，我们还能直接拖动它改变程序坞的大小，按住 <mark class="label default">⌃Control</mark> 还可以直接设置程序坞。</p>
+<h3 id="最近使用过的-App-显示区"><a href="#最近使用过的-App-显示区" class="headerlink" title="最近使用过的 App 显示区"></a>最近使用过的 App 显示区</h3><p>开启“在程序坞中显示最近使用的应用程序后”，该部分会显示在文稿废纸篓左侧。默认情况下只会显示3个最近打开过的App，<mark class="label primary">如果你打开的是系统内置的App的话，则不在此限制之内</mark>。</p>
+<h3 id="文稿废纸篓区"><a href="#文稿废纸篓区" class="headerlink" title="文稿废纸篓区"></a>文稿废纸篓区</h3><p>“文稿废纸篓”区可以固定音频、视频、文件和文件，就是不能固定App（PS：废纸篓既不能移动也不能删除）。</p>
+<h3 id="快速隐藏或显示程序坞"><a href="#快速隐藏或显示程序坞" class="headerlink" title="快速隐藏或显示程序坞"></a>快速隐藏或显示程序坞</h3><mark class="label default">⌘Command + ⌥Option + D</mark>
+
+<h3 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h3><h4 id="锁定程序坞"><a href="#锁定程序坞" class="headerlink" title="锁定程序坞"></a>锁定程序坞</h4><p>锁定程序坞后可防止别人乱动我们的程序坞。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 不能添加、删除或移动程序坞上的App</span></span><br><span class="line">defaults write com.apple.dock contents-immutable -bool yes</span><br><span class="line">killall Dock</span><br><span class="line"></span><br><span class="line"><span class="comment"># 取消锁定</span></span><br><span class="line">defaults write com.apple.Dock contents-immutable -bool no</span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>
+
+<h4 id="只显示正在运行的App"><a href="#只显示正在运行的App" class="headerlink" title="只显示正在运行的App"></a>只显示正在运行的App</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock static-only -bool <span class="literal">true</span></span><br><span class="line">killall Dock</span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复</span></span><br><span class="line">defaults write com.apple.dock static-only -bool <span class="literal">false</span></span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>
+
+<h4 id="在程序坞上添加空白的App图标"><a href="#在程序坞上添加空白的App图标" class="headerlink" title="在程序坞上添加空白的App图标"></a>在程序坞上添加空白的App图标</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock persistent-apps -array-add <span class="string">&#x27;&#123;&quot;tile-type&quot;=&quot;spacer-tile&quot;;&#125;&#x27;</span></span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>
+
+<h4 id="重置程序坞"><a href="#重置程序坞" class="headerlink" title="重置程序坞"></a>重置程序坞</h4><p>重置操作会导致之前的所有设置丢失，没有特殊情况请不要使用，以免造成不必要的麻烦～<mark class="label primary">请慎重</mark></p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">rm ~/Library/Application\ Support/Dock/*.db</span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>
+
+<p>使用该命令会导致启动台的图标顺序混乱，如果出现该问题，可使用下述代码进行恢复。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.dock ResetLaunchPad -bool <span class="literal">true</span></span><br><span class="line">killall Dock</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>Dock</tag>
+        <tag>程序坞</tag>
+        <tag>重置程序坞</tag>
+        <tag>透明图标</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基础知识-终端工具的基本使用</title>
+    <url>/881/</url>
+    <content><![CDATA[<p>只要使用您经常使用电脑，肯定或多或少听说过电脑终端。并且遇到稍微复杂点的电脑故障时，教程或者案例总是教我们如何如何在终端中操作、及其如何如何终结。那么，终端到底是什么？</p>
+<img src="/881/terminal.jpg" class="">
+
+<p>要讲明终端是什么，首先我们需要了解电脑系统的组成。通俗点的说，操作系统由两部分组成，分别是内核和用户式的交互式界面。内核负责系统的全部逻辑操作，由非常多的命令组成。这部分是系统正常运行的基础，不与用户直接接触。而交互式界面则统指的是我们常使用的程序… …</p>
+<p>如果我们想修改系统内核的某些命令及其逻辑，怎么办？这时就需要用到「终端」了，它是内核与交互式界面连接的一座桥梁。允许用户在交互式界面上打开一个叫「Terminal.app」的应用程序，在其中输入命令，进而系统给出相应的反馈。因此，终端实际允许用户间接控制系统内核，理论上能够控制一切。</p>
+<a id="more"></a>
+
+<h2 id="终端打开方式"><a href="#终端打开方式" class="headerlink" title="终端打开方式"></a>终端打开方式</h2><ol>
+<li><mark class="label default">⌘Command + 空格键</mark> 调出聚焦搜索，然后键入「terminal」或「终端」关键字。</li>
+<li>请依次点按 “访达-应用程序-实用工具-终端.app”。</li>
+<li>四指从外向里抓触控板，在启动台的「实用工具」里找到。</li>
+</ol>
+<h2 id="定制shell提示符"><a href="#定制shell提示符" class="headerlink" title="定制shell提示符"></a>定制shell提示符</h2><p>终端中的每个窗口都代表着一个 shell 进程的实例。打开终端时，窗口内会相应的一些提示符，这些提示符跟您对终端和 shell 的设置有关。通常情况下是下面的样子：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Admin@MacBook~Desktop/ $</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Admin 用户名</li>
+<li>MacBook 电脑名称</li>
+<li>~Desktop/ 当前所在目录</li>
+</ul>
+<p>上述提示符在系统内的配置是 <mark class="label default">export PS1=“\u</mark>，通过修改 shell 脚本的解释器，可以对其进行更改。MacOS 系统默认的是 bash 登录式脚本解释器，所以您需要修改的是 <mark class="label default">~/.bash_profile</mark>。PS1后的参数：</p>
+<div class="note "><p>除了 bash 解释器外，系统还内置了一些其它的解析器，使用 <mark class="label default">cat /etc/shells</mark> 或 <mark class="label default">echo $SHELL</mark> 命令可对其枚举。</p>
+</div>
+
+<ul>
+<li>\W：当前工作目录名的最后部分</li>
+<li>\w：完整目录名</li>
+<li>$：显示”$”字符，超级用户显示一个”#”字符</li>
+<li>\l：当前终端设备名</li>
+<li>\d：当前日期</li>
+<li>\t：当前时间</li>
+<li>\h：hostname</li>
+</ul>
+<p>修改完成后，需要通过 <mark class="label default">source ~/.bash_profile</mark> 对其重启，才可生效。如果您还想修改终端内的用户名，可使用 <mark class="label default">sudo scutil --set HostName yourname</mark> 命令。</p>
+<h2 id="切换shell解释器"><a href="#切换shell解释器" class="headerlink" title="切换shell解释器"></a>切换shell解释器</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">chsh -s /bin/zsh</span><br></pre></td></tr></table></figure>
+
+<h2 id="安装Command-line-tools"><a href="#安装Command-line-tools" class="headerlink" title="安装Command line tools"></a>安装Command line tools</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">xcode-select -–install</span><br></pre></td></tr></table></figure>
+
+<p>在弹出的界面点 install 同意即可（经常使用VPN工具的，记得要关闭）</p>
+<a href="#">Post not found: 系统命令-xcode-select-install 关于 Command line tools 的解释</a>
+
+<h2 id="tab自动补全"><a href="#tab自动补全" class="headerlink" title="tab自动补全"></a>tab自动补全</h2><p>打开 Terminal 输入 <mark class="label default">nano .inputrc</mark>，再输入下述内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> completion-ignore-case on</span><br><span class="line"><span class="built_in">set</span> show-all-if-ambiguous on</span><br><span class="line">TAB: menu-complete</span><br></pre></td></tr></table></figure>
+
+<p>完成后按 <mark class="label default">⌃Control ＋ o</mark> 键保存关闭、重启。</p>
+<h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh</span><br><span class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换shell解释器为zsh</span></span><br><span class="line">chsh -s $(<span class="built_in">which</span> zsh)</span><br></pre></td></tr></table></figure>
+
+<p>完成后重启终端。卸载 oh-my-zsh 直接在终端执行 <mark class="label default">uninstall_oh_my_zsh</mark> 进行卸载！并且它内置了很多 Plugins，默认开启的是 git，您也可以按照 <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins</a> 所示开启和查看。</p>
+<p>更改主题可到 <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Themes">https://github.com/ohmyzsh/ohmyzsh/wiki/Themes</a> 查阅，看好那个主题后，可直接到 ~/.zshrc 内修改 <mark class="label default">ZSH_THEME=</mark> 模块，再 <mark class="label default">source ~/.zshrc</mark> 重启下，即可完成对主题变更。</p>
+<h2 id="基础命令"><a href="#基础命令" class="headerlink" title="基础命令"></a>基础命令</h2><mark class="label default">pwd</mark> 以绝对路径的方式显示用户当前所在的工作目录位置
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Downloads</span><br><span class="line"><span class="built_in">pwd</span></span><br><span class="line"><span class="comment"># /Users/***/Downloads</span></span><br></pre></td></tr></table></figure>
+
+<mark class="label default">cd</mark> 进到指定目录或文件夹
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 进入用户根目录</span></span><br><span class="line"><span class="built_in">cd</span></span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入系统根目录</span></span><br><span class="line"><span class="built_in">cd</span> /</span><br><span class="line"></span><br><span class="line"><span class="comment"># 回到上次所在目录</span></span><br><span class="line"><span class="built_in">cd</span> -</span><br><span class="line"></span><br><span class="line"><span class="comment"># 回到上一级目录</span></span><br><span class="line"><span class="built_in">cd</span> ..</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">touch</mark> 创建文件
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">touch ~/a.txt</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">cp</mark> 拷贝文件或目录
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 将文件复制到用户根目录下</span></span><br><span class="line">cp empty ~</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制目录下所有以 js 结尾的文件到 Downloads/Js 目录下</span></span><br><span class="line"><span class="comment"># 如果 Downloads 目录下没有 Js 文件夹的话，将会自动创建一个</span></span><br><span class="line">cp *.js ~/Downloads/Js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加 -r 选项，复制目录下所有的文件以及子目录</span></span><br><span class="line">cp -r . ~/Downloads/Js</span><br><span class="line"></span><br><span class="line"><span class="comment"># 复制一个文件并且重新命名，然后移动到指定位置</span></span><br><span class="line">cp empty ~/Downloads/newEmpty</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">mv</mark> 改变文件名或所在目录的位置
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 移动文件或目录到指定位置</span></span><br><span class="line">mv empty ~/Downloads/empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 先给文件或目录重新命名，然后再移动到指定位置</span></span><br><span class="line">mv empty ~/Downloads/newEmpty</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">rm</mark> 用来删除文件和目录，需要格外慎重。
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 普通的删除文件</span></span><br><span class="line">rm ~/Downloads/empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归删除目录下所有的文件以及子目录</span></span><br><span class="line">rm -r empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 强制删除</span></span><br><span class="line">rm -f ~/Downloads/empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归强制删除</span></span><br><span class="line">rm -rf ~/Downloads/</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">mkdir</mark> 创建目录
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 创建一个空白的目录</span></span><br><span class="line">mkdir empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个有子目录的目录</span></span><br><span class="line"><span class="comment"># -p 选项是，如果要创建的目录的父级目录不存在的话，一并创建</span></span><br><span class="line">mkdir -p ~/Downloads/New/empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一次性创建多个目录</span></span><br><span class="line">mkdir emptyA emptyA ~/Downloads/emptyC</span><br><span class="line"></span><br><span class="line"><span class="comment"># 一次性创建多个目录，并且某个要创建的目录拥有多个字目录</span></span><br><span class="line">mkdir emptyA emptyB/&#123;emptyB-A, emptyB-B, emptyB-C&#125;</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">rmdir</mark> 删除空白文件目录
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 删除空白文件目录，如果目录下有东西是删除不了的</span></span><br><span class="line">rmdir empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 加 -p 选项</span></span><br><span class="line"><span class="comment"># 如果删除了某个目录，父目录就变为空目录的话，就一块删除</span></span><br><span class="line">rmdir ~/Downloads/empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除多个目录</span></span><br><span class="line">rmdir emptyA emptyB</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">ls</mark> 枚举目标目录中所有的子目录和文件，注意参数的大小写。
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 列出当前目录下非隐藏的文件和目录，等价于“ls -C（注意：大写）”</span></span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出目录下的所有文件，包括以“.”开头的隐含文件</span></span><br><span class="line">ls -a</span><br><span class="line">ls -all</span><br><span class="line"></span><br><span class="line"><span class="comment"># 与上面的“ls -a”命令几乎相同，只不过是此命令不显示“.（当前目录）”和“..（父级目录）”这两个</span></span><br><span class="line">ls -A</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前目录下非隐藏的文件和目录，并用逗号“,”分割</span></span><br><span class="line">ls -m</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前目录下所有的文件或目录详细信息</span></span><br><span class="line">ls -l</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出指定文件的详细信息</span></span><br><span class="line">ls -l empty</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用文件或目录修改的时间进行排序</span></span><br><span class="line">ls -t</span><br><span class="line"></span><br><span class="line"><span class="comment"># 递归显示文件，会把此根目录下的所有文件都显示出来</span></span><br><span class="line">ls -R</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">kill</mark> 结束指定进程
+
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># kill 9 强制终止进程</span></span><br><span class="line"><span class="built_in">kill</span> 9 40142</span><br></pre></td></tr></table></figure>
+
+<mark class="label default">clear</mark> 清空屏幕信息
+
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><p>这里只列出几个常用的，更多请查阅 “帮助 - 终端帮助 - 键盘快捷键”</p>
+<ul>
+<li><mark class="label default">⌘Command + N</mark>：再打开一个终端</li>
+<li><mark class="label default">⌘Command + T</mark>：新建窗口</li>
+<li><mark class="label default">⇧Shift + ⌘Command + K</mark>：新建远程连接</li>
+<li><mark class="label default">⌃Control + A</mark>：光标移到行开头</li>
+<li><mark class="label default">⌃Control + E</mark>：光标移到行结尾</li>
+<li><mark class="label default">⌃Control + U</mark>：光标位置删除到行开头</li>
+<li><mark class="label default">⌃Control + K</mark>：光标位置删除到行尾</li>
+<li><mark class="label default">⌃Control + W</mark>：删除光标位置左侧一个单词</li>
+<li><mark class="label default">⌥option + D</mark>：删除光标位置右侧一个单词（终端 - 偏好设置 - 描述文件 - 键盘 - 勾选将option键用作Meta键）</li>
+<li><mark class="label default">⌥option + 左箭头</mark>：光标前移一个单词</li>
+<li><mark class="label default">⌥option + 右箭头</mark>：光标后移一个单词</li>
+<li><mark class="label default">⌘Command + .</mark>：中断（跳转到下一行重新开始）</li>
+</ul>
+]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>terminal</tag>
+        <tag>shell</tag>
+        <tag>bash</tag>
+        <tag>zsh</tag>
+        <tag>如何打开终端工具</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基础知识-输入法</title>
+    <url>/34408/</url>
+    <content><![CDATA[<p>在使用 Mac 电脑时，只要您写作或者编辑文档，肯定避免不了使用输入法，基础的操作相信大家都会。例如：</p>
+<p>常用快捷键：</p>
+<ul>
+<li><mark class="label default">中/英键</mark>：只切换中英文输入法</li>
+<li><mark class="label default">⌥Option + ⌃Control + 空格键</mark>：选择输入法菜单中下一个输入法</li>
+<li><mark class="label default">⌃Control + 空格键</mark>：选择输入法菜单中上一个输入法</li>
+<li><mark class="label default">⇧Shift + 6</mark>：颜文字……(^з^)-☆♂（中文状态）</li>
+<li><mark class="label default">⇧Shift + ⌥Option + K</mark>：</li>
+<li><mark class="label default">⌃Control + ⌘Command + 空格键</mark>：字符检查器，在这里能找到您日常所需的所有特殊字符
+<a id="more"></a>
+
+</li>
+</ul>
+<p>添加删除输入法：<br>在 “系统偏好设置-键盘-输入法” 里更改</p>
+<img src="/34408/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%BE%93%E5%85%A5%E6%B3%95.jpg" class="" title="添加删除输入法">
+
+<p>除了上述基础又基础的输入法使用外。偶尔情况下，教师、家长、新媒体运营、翻译工作者等群体，可能会遇到需要输入生僻字、给生僻字标注拼音、给英文单词标注音标… …情况</p>
+<p>这时我们就需要详细介绍下，MacOS 系统输入法的小技巧了～</p>
+<h2 id="输入生僻字"><a href="#输入生僻字" class="headerlink" title="输入生僻字"></a>输入生僻字</h2><p>中华文化博大精深，生活中遇见自己不认识的汉字，很正常嘛！这时我们要录入该字，怎么办？不着急～ 我们先观察观察字体结构，了解构造组成部分后，再把它拆分成多个简单的汉字，然后再在输入法里分别输入，按 <mark class="label default">Shift + 空格键</mark> 调出检测结果提示框，这样匹配的结果，不仅显示生僻字还会显示生僻字的拼音。</p>
+<p>以“泖mǎo”为例，我们把它拆分成左右两部分（氵shui + 卯mao），然后分别输入，按 <mark class="label default">Shift + 空格键</mark> 就会调出如下结果。</p>
+<img src="/34408/%E6%B3%96.jpg" class="" title="泖字的拆分">
+
+<h2 id="输入汉语拼音"><a href="#输入汉语拼音" class="headerlink" title="输入汉语拼音"></a>输入汉语拼音</h2><p>MacOS 系统内置了 ApplePressAndHoldEnabled 功能，中文状态下长按字母能重复性输入；英文状态下长按，可弹出元音音标提示框。利用该功能，我们可以输入汉语拼音字母的 1、2、4 声。</p>
+<img src="/34408/ApplePressAndHoldEnabled.jpg" class="" title="ApplePressAndHoldEnabled">
+
+<p>那么你可能会问，怎么没有 3 声哪？这是因为 ApplePressAndHoldEnabled 功能，是为英语音标专门设计的。所以，汉语的拼音还不是很兼容。如果您不喜欢 ApplePressAndHoldEnabled，我们可以使用 defaults 命令对其进行关闭。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write -g ApplePressAndHoldEnabled -bool <span class="literal">false</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">defaults write NSGlobalDomain ApplePressAndHoldEnabled -boolean <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 针对应用程序进行关闭</span></span><br><span class="line">defaults write <span class="string">&#x27;com.microsoft.VSCode&#x27;</span> ApplePressAndHoldEnabled -bool <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复 ApplePressAndHoldEnabled 功能</span></span><br><span class="line">defaults delete -g ApplePressAndHoldEnabled</span><br><span class="line"></span><br><span class="line"><span class="comment"># 枚举 ApplePressAndHoldEnabled 配置情况</span></span><br><span class="line"><span class="comment"># 未设置的不会显示任何结果</span></span><br><span class="line">defaults <span class="built_in">read</span> | grep ApplePressAndHoldEnabled</span><br></pre></td></tr></table></figure>
+
+<p>输入 3 声的字母，我们可以利用输入法扩展的 ⌥Option 组合键进行输入。<mark class="label default">⌥Option + A\E\V\~ + 元音字母</mark> 可以分别输入字母的 1、2、3、4 声。</p>
+<ul>
+<li><mark class="label default">⌥Option + A + U</mark>：一声 ū</li>
+<li><mark class="label default">⌥Option + E + U</mark>：二声 ú</li>
+<li><mark class="label default">⌥Option + V + U</mark>：三声 ǔ</li>
+<li><mark class="label default">⌥Option + ~ + U</mark>：四声 ù
+
+</li>
+</ul>
+<p>单个汉字的全拼，我们可以从系统自带的，词典内的「汉语词典」里进行复制。</p>
+<img src="/34408/%E7%A7%92.jpg" class="" title="汉语词典里的拼音">
+
+<p>除了获取单个汉字的全拼外，您可能还会遇到给多个文字，甚至给一段话添加拼音的情况。这时我们可以使用 Pages 的「拼音指南文本」功能，给它们添加。但是「拼音指南文本」有个缺陷，就是没办法对拼音进行个性化设置。</p>
+<img src="/34408/%E6%8B%BC%E9%9F%B3%E6%8C%87%E5%8D%97%E6%96%87%E6%9C%AC.jpg" class="" title="拼音指南文本">
+<img src="/34408/%E6%8B%BC%E9%9F%B3%E6%8C%87%E5%8D%97%E6%96%87%E6%9C%AC%E7%BB%93%E6%9E%9C.jpg" class="" title="拼音指南文本结果">
+
+<h2 id="输入国际音标"><a href="#输入国际音标" class="headerlink" title="输入国际音标"></a>输入国际音标</h2><ol>
+<li>英文状态下长按相关字母。</li>
+<li>在「词典-英汉·汉英词典」输入单词并复制音标。</li>
+<li><mark class="label default">⌃Control + ⌘Command + 空格键</mark> 调出字符检查器，然后在「音标字母」内找。
+<br>没有「音标字母」的，点击字符检查器左上角的 “设置” 图标进行追加。</li>
+</ol>
+<img src="/34408/%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D.jpg" class="" title="音标字母">
+
+<ol start="4">
+<li>ApplePressAndHoldEnabled 功能、字符检查器里没有的国际音标，可以到网络上进行搜索，然后添加到 “文本替换（“系统偏好设置-键盘-文本”）” 里。使用时只需要输入，「输入码」里面设定的单词，即可输入。</li>
+</ol>
+<img src="/34408/%E7%89%B9%E6%AE%8A%E9%9F%B3%E6%A0%87.jpg" class="" title="特殊音标">
+
+<br/>
+
+<p>最后的最后：<br>嫌 MacOS 输入国际音标麻烦的，<br>又或者某个国际音标实在找不到！可参照 <a href="https://support.apple.com/zh-cn/guide/mac-help/mchlp2866/mac">Apple 官网</a> 给出的示例文档，定制自己的个性化输入法，又或者下载搜狗输入法。</p>
+]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>输入法</tag>
+        <tag>拼音</tag>
+        <tag>国际音标</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快捷键-常用快捷键清单</title>
+    <url>/43680/</url>
+    <content><![CDATA[<p>使用快捷键是提高我们工作效率最明显的办法之一，这里为大家列出了日常使用 MacOS 系统，用到最多的几个快捷键。如果想了解更多快捷键，请到 <a href="https://support.apple.com/zh-cn/HT201236">苹果官网</a> 进行查看。</p>
+<p>这么多快捷键全部记住是不可能的，最有效的办法就是用那个查那个！</p>
+<blockquote class="blockquote-center">
+<p>懒得搜快捷键的，推荐安装：<a href="https://www.ergonis.com/products/keycue/">CheatSheet.app</a>，长按 ⌘Command 可调出当前App的所有快捷键列表</p>
+
+</blockquote>
+<a id="more"></a>
+
+<h3 id="输入法"><a href="#输入法" class="headerlink" title="输入法"></a>输入法</h3><ul>
+<li>⌃Control + 空格键：系统默认的切换输入法快捷键</li>
+<li>中/英键：切换输入法</li>
+<li>⌘Command + ⌃Control + Space空格：字体检查器</li>
+</ul>
+<h3 id="文稿"><a href="#文稿" class="headerlink" title="文稿"></a>文稿</h3><ul>
+<li>⌘Command + C：复制</li>
+<li>⌘Command + X：剪切</li>
+<li>⌘Command + V：粘贴</li>
+<li>⌘Command + S：保存</li>
+<li>⌘Command + P：打印</li>
+</ul>
+<h3 id="访达"><a href="#访达" class="headerlink" title="访达"></a>访达</h3><ul>
+<li>⌘Command + E：推出磁盘或卷宗</li>
+<li>⌘Command + T：新建标签页</li>
+<li>⌘Command + N：新建窗口</li>
+<li>⌘Command + C：复制</li>
+<li>⌘Command + V：粘贴</li>
+<li>⌘Command + D：创建副本</li>
+<li>⌘Command + ⌥Option + V：剪切式粘贴</li>
+<li>⌘Command + I：显示文件简介</li>
+<li>⌘Command + ⇧Shift + N：新建空白文件夹</li>
+<li>⌘Command + ⇧Shift + G：前往执行文件夹</li>
+<li>⌘Command + ⇧Shift + .：显示隐藏文件</li>
+<li>⌘Command + ⌃Control + T：将指定文件添加到访达侧边栏</li>
+</ul>
+<h3 id="程序坞"><a href="#程序坞" class="headerlink" title="程序坞"></a>程序坞</h3><ul>
+<li>⌘Command + ⌥Option + D：显示或隐藏程序坞</li>
+</ul>
+<h3 id="废纸篓"><a href="#废纸篓" class="headerlink" title="废纸篓"></a>废纸篓</h3><ul>
+<li>⌘Command + ⌫ Delete：将所选项移到废纸篓</li>
+<li>⌘Command + ⇧Shift + ⌫ Delete：删除废纸篓所有内容</li>
+<li>⌘Command + ⇧Shift + ⌥Option + ⌫ Delete：删除内容不显示提示框</li>
+</ul>
+<h3 id="通用快捷键"><a href="#通用快捷键" class="headerlink" title="通用快捷键"></a>通用快捷键</h3><ul>
+<li>⌘Command + W：关闭窗口</li>
+<li>⌘Command + ⇥Tab：切换程序</li>
+<li>⌘Command + Q：退出程序</li>
+<li>⌘Command + 空格space：打开聚焦搜索框</li>
+<li>⌘Command +  M：最小化窗口</li>
+<li>⌘Command + ⌥Option + H：最小化当前程序的所有窗口</li>
+<li>⌘Command +  H：隐藏</li>
+<li>⌘Command + ⌥Option + H：隐藏其它</li>
+<li>⌘Command + ⌥Option + M + H：隐藏所有活动窗口</li>
+<li>⌘Command + ⌃Control + Q：锁屏</li>
+<li>⌘Command + ⇧Shift + Q：退出当前登陆账户会有提示</li>
+<li>⌘Command + ⇧Shift + ⌥Option + Q：强制退出当前账户</li>
+</ul>
+]]></content>
+      <categories>
+        <category>快捷键</category>
+      </categories>
+      <tags>
+        <tag>command</tag>
+        <tag>option</tag>
+        <tag>control</tag>
+        <tag>快捷键</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快捷键-自定义快捷键预设</title>
+    <url>/10680/</url>
+    <content><![CDATA[<a href="/43680/" title="快捷键-常用快捷键清单">快捷键-常用快捷键清单</a> 文章中，介绍了大家生活中常用的一些快捷键，想了解的请点击前方的链接，进行移步。熟悉这些快捷键的同时，那么，您知道如何自定义快捷键吗？
+
+<p>以 sublime text.app 为例，给菜单里的「打开项目…」设置 <mark class="label default">⌘Command + ;</mark> 键。</p>
+<img src="/10680/%E6%89%93%E5%BC%80%E9%A1%B9%E7%9B%AE.jpg" class="">
+
+<p style="margin-top: -15px;font-size: 12px;color: #999;text-align: center;">此图可以看出，原本的菜单选项，是没有快捷键的。</p>
+<a id="more"></a>
+
+<p><strong>具体步骤：</strong></p>
+<ol>
+<li>依次点按“系统偏好设置-键盘-快捷键-App快捷键- +”</li>
+<li>选择弹框中的「应用程序」下拉菜单</li>
+<li>选择「sublime text.app」</li>
+<li>在菜单标题中输入“打开项目…”</li>
+<li>在键盘快捷键中的 input 内，直接按 <mark class="label default">⌘Command + ;</mark>。</li>
+<li>添加</li>
+<li>以后可以愉快的玩耍啦…</li>
+</ol>
+<img src="/10680/%E8%AE%BE%E7%BD%AE.jpg" class="">
+
+<p>此时，您再回到 sublime text.app，快捷键是不是直接就显示出来了…</p>
+<img src="/10680/%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%95%88%E6%9E%9C.jpg" class="">
+
+<p><strong>温馨提示：</strong></p>
+<ol>
+<li>菜单标题要准确无误的输入；</li>
+<li>标题中如果有省略号请按 ⌥Option + ; 输入，或者直接输入三个小点；</li>
+<li>标题中出现大于号（&gt;）的请替换成 -&gt;；</li>
+<li>重复定义的快捷键无效；</li>
+</ol>
+]]></content>
+      <categories>
+        <category>快捷键</category>
+      </categories>
+      <tags>
+        <tag>快捷键</tag>
+        <tag>自定义</tag>
+        <tag>Command</tag>
+        <tag>自定义快捷键</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>故障问题-app程序损坏</title>
+    <url>/17717/</url>
+    <content><![CDATA[<p>如果我们直接安装或者接收别人传来的 .app 程序时，有时会提示“xxx.app 已损坏，无法打开。您应将它移除到废纸篓。” 的问题。</p>
+<p>例如：</p>
+<img src="/17717/%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E5%BA%94%E7%94%A8.jpg" class="">
+<a id="more"></a>
+
+<blockquote class="blockquote-center">
+<p>造成该问题的原因是 .app 程序的可执行文件，权限丢失造成的。</p>
+
+</blockquote>
+
+<p>解决办法是：</p>
+<img src="/17717/%E7%BB%88%E7%AB%AF.jpg" class="">
+
+<ol>
+<li><mark class="label default">⌘Command + 空格键</mark> 打开聚焦搜索。</li>
+<li>输入“terminal”后回车，以此打开终端工具。</li>
+<li>在终端内输入 <mark class="label default">sudo xattr -d com.apple.quarantine</mark>（使用时注意命令后方有个空格）。</li>
+<li>把出现问题的 app 程序，拖拽到刚才输入的命令后方回车。</li>
+<li>完美解决了。</li>
+</ol>
+<p>您也可以直接在出现损坏的 app 上右键，依次打开 “显示包内容-Contents-MacOS”，然后把该目录下的可执行文件，拖到终端 <mark class="label default">sudo chmod +x</mark> 命令的后方（拖拽时要在命令的后方添加个空格），对其赋予权限。</p>
+]]></content>
+      <categories>
+        <category>故障问题</category>
+      </categories>
+      <tags>
+        <tag>程序损坏</tag>
+        <tag>xxx.app无法打开</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>故障问题-Line too long in config file</title>
+    <url>/49857/</url>
+    <content><![CDATA[<p>打开<a href="/881/" title="终端.app">终端.app</a>，如果报下述错误！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Line too long <span class="keyword">in</span> config file</span><br><span class="line">unable to make sense of the file /private/etc/man.conf</span><br></pre></td></tr></table></figure>
+
+<p>请使用相关编辑器打开 <mark class="label default">/etc/man.conf</mark>，并在结尾处添加一行空白行保存，该问题即可解决。</p>
+]]></content>
+      <categories>
+        <category>故障问题</category>
+      </categories>
+      <tags>
+        <tag>man</tag>
+        <tag>/private/etc/man.conf</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>故障问题-忘记开机密码</title>
+    <url>/39325/</url>
+    <content><![CDATA[<h2 id="使用-Apple-ID-重置密码"><a href="#使用-Apple-ID-重置密码" class="headerlink" title="使用 Apple ID 重置密码"></a>使用 Apple ID 重置密码</h2><p>开机后，在登陆界面，持续输入三次错误的密码进行登录，直到系统提示您可以使用 Apple ID 重置密码时为止。</p>
+<ol>
+<li>点按「密码提示框」最下方的：……使用您的 Apple ID 来重置 ▶︎</li>
+<li>输入 ID 账户及其密码</li>
+<li>系统重启后，输入新的登录密码<a id="more"></a>
+
+</li>
+</ol>
+<h2 id="使用-MacOS-恢复功能重置密码"><a href="#使用-MacOS-恢复功能重置密码" class="headerlink" title="使用 MacOS 恢复功能重置密码"></a>使用 MacOS 恢复功能重置密码</h2><ol>
+<li>开机后，快速按下 <mark class="label default">⌘Command + R</mark> 键进入 MacOS 的恢复界面，直到您看到 Apple 标志或旋转的地球松手。</li>
+<li>点按屏幕左上角菜单栏中的“实用工具-终端”。</li>
+<li>在终端窗口中键入 <mark class="label default">resetpassword</mark> 回车，系统就会弹出「重设密码」程序。</li>
+<li>根据要求重置密码并重启。</li>
+</ol>
+<h2 id="温馨提示"><a href="#温馨提示" class="headerlink" title="温馨提示"></a>温馨提示</h2><div class="note danger"><p>普通账户无法重置管理员账户的密码！</p>
+</div>
+
+<p>您的 Mac 带 TouchBar 的话，在重置密码后，可能会遇到无法使用指纹进行解锁的情况。这是因为我们在重置账户密码时，系统删除了原来的「指纹ID」设置。所以，您只需要再重新录入指纹，并开启相关选项，即可解决。</p>
+<blockquote class="blockquote-center">
+<p>路径：系统偏好设置-触控ID-添加指纹</p>
+
+</blockquote>
+
+<p>更多问题请参考 <a href="https://support.apple.com/zh-cn/HT202860">Apple 技术支持</a> 相关解答。</p>
+]]></content>
+      <categories>
+        <category>故障问题</category>
+      </categories>
+      <tags>
+        <tag>密码</tag>
+        <tag>登录密码</tag>
+        <tag>忘记开机密码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>故障问题-dmg提示无法验证开发者</title>
+    <url>/52375/</url>
+    <content><![CDATA[<p>MacOS 系统在 10.12 版本中，启用了新的安全机制。默认情况下，只会信任在 App Store 下载的软件和拥有开发者 ID 签名的应用程序。简单理解就是，您想使用的程序，必须得通过 Apple 公司的审查机制。否则，您就没办法使用。Apple 这么做不是为了限制您的使用哦，而是，为了我们的系统安全做的考量。</p>
+<blockquote>
+<p>如果打开 .app 程序出现损坏问题，请查阅 <a href="/17717/" title="app程序损坏问题解决方案">app程序损坏问题解决方案</a></p>
+</blockquote>
+<p><strong>例如：</strong></p>
+<p>我安装七牛云的命令行工具 qshell 时，就报了<strong>无法验证开发者</strong>的错误提示。</p>
+<img src="/52375/qshell.jpg" class="">
+<a id="more"></a>
+<blockquote class="blockquote-center">
+<p>这是 MacOS 系统的 <a href="https://support.apple.com/zh-cn/HT202491">Gatekeeper</a> 保护系统造成的。</p>
+
+</blockquote>
+
+<p>如果报此问题，可在按住 <mark class="label default">⌃Control</mark> 键的同时点按应用，从菜单中选取“打开”，然后在出现的提示框中选择“打开”。系统提示时，输入管理员名称和密码。现在，您就可以正常的安装及其使用了。</p>
+<p>我们还可以开启「任何来源」选项，进行解决（PS：MacOS 10.12 版本开始默认不再显示该选项）</p>
+<ol>
+<li>打开<a href="/881/" title="「终端.app」">「终端.app」</a></li>
+<li>输入 <mark class="label default">sudo spctl --master-disable</mark></li>
+<li>输入管理员账户及其密码</li>
+<li>勾选「系统偏好设置-安全性与隐私」里的允许从「任何来源」选项</li>
+</ol>
+<img src="/52375/spctl.jpg" class="">
+
+<p>关闭该选项，请执行 <mark class="label default">sudo spctl --master-enable</mark>。</p>
+]]></content>
+      <categories>
+        <category>故障问题</category>
+      </categories>
+      <tags>
+        <tag>无法验证开发者</tag>
+        <tag>任意来源</tag>
+        <tag>dmg</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统指令-关闭SIP系统完整性保护</title>
+    <url>/50664/</url>
+    <content><![CDATA[<p>Apple 在 Mac 的 OS X EI Captian 版本时，开始采用 SIP 「System Integrity Protection，系统完整性保护」技术保护系统。SIP 能够有效地帮助我们，阻止恶意软件篡改系统上受保护的文件或文件夹。但，这会影响我们一些使用或设置。还有 App Store 上的所有应用程序，都是运用在沙盒模式下的。</p>
+<p>正是基于这些，很多优秀的应用程序因为需要 SIP 权限，没办法通过 Apple 的审查机制在 App Store 上上架，进而采取双版本策略。App Store 版使用阉割版，官方版使用全功能型版本。如果我们想使用全功能型版本、更改或编辑系统文件，就必须得关闭 SIP。</p>
+<a id="more"></a>
+
+<blockquote>
+<p>非必要不建议大家关闭</p>
+</blockquote>
+<h2 id="关闭-SIP"><a href="#关闭-SIP" class="headerlink" title="关闭 SIP"></a>关闭 SIP</h2><ol>
+<li>关机。</li>
+<li>开机时，立即在键盘上按住 <mark class="label default">⌘Command + R</mark>，直到看到 Apple 标志或旋转的地球时松开。</li>
+<li>进入 RecoveryOS 界面后，依次点按「实用工具-终端」。</li>
+<li>输入 <mark class="label default">csrutil disable</mark> 后回车。</li>
+<li>点按菜单栏  标志，选择「重新启动」。</li>
+<li>OK。</li>
+</ol>
+<img src="/50664/RecoveryOS.png" class="">
+<img src="/50664/csrutil.png" class="">
+
+<h2 id="检测-SIP-状态"><a href="#检测-SIP-状态" class="headerlink" title="检测 SIP 状态"></a>检测 SIP 状态</h2><ol>
+<li>打开「终端」。</li>
+<li>输入 <mark class="label default">csrutil status</mark> 回车。</li>
+<li>提示下述状态。</li>
+</ol>
+<p>System Integrity Protection status: enabled. SIP开启状态<br>System Integrity Protection status: disabled. SIP关闭状态</p>
+<img src="/50664/status.png" class="">
+
+<p>除了关闭 SIP 系统完整性保护外，您还可在 RecoveryOS 界面的「实用工具-启动安全性实用工具」或「实用工具-<a href="https://support.apple.com/zh-cn/guide/security/secc7b34e5b5/web">固件密码实用工具</a>」内对其 SIP 进行降级。</p>
+]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>SIP</tag>
+        <tag>System Integrity Protection</tag>
+        <tag>系统完整性保护</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统指令-删除程序的卸载残留</title>
+    <url>/2296/</url>
+    <content><![CDATA[<p>MacOS 系统上卸载程序，我们通常的做法就是，直接删除位于 “访达-应用程序” 里面的App；又或者按住 <mark class="label default">⌥option</mark> 直接在启动台卸载（只适用于从 App Store 下载的程序）。这两种做法都是不会删除程序的用户配置及其其它关键信息的，时间长了系统虽然会帮我们自动清理一些残留。如果我们现在就不想保留哪？此时<mark class="label warning">可以使用 mdfind 命令，手动查询跟程序相关的文件并删除</mark>。</p>
+<div class="note "><p>mdfind 其实就是 MacOS 的聚焦搜索 Spotlight。如果您的 Spotlight 不正常工作，也可以 <code>mdutil -E</code> 强制重建索引数据库</p>
+</div>
+
+<p>例如：查询跟 CleanMyMac.app 所有相关的文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查询</span></span><br><span class="line">mdfind -name CleanMyMac</span><br><span class="line"><span class="comment"># /Applications/CleanMyMac X.app</span></span><br><span class="line"><span class="comment"># /Library/LaunchDaemons/com.macpaw.zh.CleanMyMac4.Agent.plist</span></span><br><span class="line"><span class="comment"># /Library/LaunchDaemons/com.macpaw.CleanMyMac4.Agent.plist</span></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># rm -rf 手动强制删除</span></span><br><span class="line"><span class="comment"># 如果路径中有空格的话，注意使用反斜杠转义下</span></span><br><span class="line">rm -rf /Applications/CleanMyMac\ X.app</span><br></pre></td></tr></table></figure>
+
+<p>还可以使用 -onlyin 参数，指定搜索的目录（mdfind -onlyin ~/downloads CleanMyMac）。</p>
+]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>mdfind</tag>
+        <tag>uninstall</tag>
+        <tag>卸载</tag>
+        <tag>卸载残留</tag>
+        <tag>CleanMyMac X.app</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统指令 Xcode-select --install</title>
+    <url>/44387/</url>
+    <content><![CDATA[<p>如果您是程序猿并且使用的是 Mac，肯定避免不了要安装 Xcode，因为它内置了很多开发所必须的环境。在最新版本的 Xcode 中，默认不再集成 「Xcode command line tools」。如果您不是 iOS 或 OS X 开发者，可以跳过 XCode（程序大小近10G）直接安装 「Xcode command line tools」 了。</p>
+<p>在 <a href="/881/" title="基础知识-终端工具">基础知识-终端工具</a> 内，键入如下命令，在弹出的界面点 Install 同意即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
+
+<p>如果 Install 不了，可到 <a href="https://developer.apple.com/download/more/">Developer Apple</a> 内下载相应的包。</p>
+<p>如果您想了解 Xcode command line tools 包含多少可用的命令，可以到 <mark class="label default">/Library/Developer/CommandLineTools/</mark> 查看，另外如果您想卸载的话直接删除该目录即可。</p>
+]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>xcode</tag>
+        <tag>git</tag>
+        <tag>xcode command line tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统指令-启动web服务的方法</title>
+    <url>/43447/</url>
+    <content><![CDATA[<p>MacOS 系统对开发很友好，默认集成了 Python2 和 PHP 语言。我们可以利用它们开启 web 服务，给远在它处或局域网下的朋友们共享我们的目录。注意：朋友只能在线一个进行访问，多位朋友则不行。</p>
+<blockquote>
+<p>至于为什么不用系统内置的「隔空投送」？<br>那是因为，隔空投送对文件大小和系统都有要求。例如您想给使用 Android 或者 window 朋友传输文件，难道还要使用隔空投送嘛…</p>
+</blockquote>
+<p>开启步骤：</p>
+<ol>
+<li>打开终端（<a href="/881/" title="请查阅“基础知识-终端工具”">请查阅“基础知识-终端工具”</a>）。</li>
+<li>输入 <mark class="label default">cd</mark> 命令进到要共享的目录。</li>
+<li>选择下述任何一个命令进行执行。</li>
+<li>把 <a href="https://localhost:8000/">https://localhost:8000</a> 中的 localhost 改为自己的 <a href="#">Post not found: IPv4 系统服务-查看本机IP地址</a> 地址，分享给朋友。</li>
+<li>让朋友用浏览器打开您分享的链接。</li>
+<li>关闭终端或按 <mark class="label default">⌃Control + C</mark>终结web服务。</li>
+</ol>
+<img src="/43447/ipv4.jpg" class="">
+<a id="more"></a>
+
+<p>Python</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8000</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="comment"># 需要先升级 python 才可使用 python3 命令</span></span><br><span class="line">python3 -m http.server --cgi 8000</span><br></pre></td></tr></table></figure>
+
+<p>PHP</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">php -S localhost:8000</span><br></pre></td></tr></table></figure>
+
+<p>前端程序猿可以使用 npm 安装 serve 服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g serve</span><br><span class="line"></span><br><span class="line"># 启动 web 服务命令，无需写端口号</span><br><span class="line"># 默认 5000 端口</span><br><span class="line">serve</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>www</tag>
+        <tag>web</tag>
+        <tag>localhost</tag>
+        <tag>php</tag>
+        <tag>python2</tag>
+        <tag>https://localhost:8000</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统指令-查看局域网下的IPv4地址</title>
+    <url>/62974/</url>
+    <content><![CDATA[<p>查看 IPv4 地址之前，我们先科普下基础知识。什么是 IPv4？想明白什么是 IPv4，就得先明白什么是 IP。IP 是网际协议或互联网协议，是用在 TCP/IP 协议簇中的网络层协议。另外 IP 有一个非常重要的属性，就是给每台计算机和设备规定一个地址，也就是我们俗称的 IP 地址。通俗点理解就是两个人做生意需要先约法三章签订协议，然后再写上联系自己的唯一方式比较类似。而 IPv4 表示IP协议的第四个版本 Internet Protocol version 4。</p>
+<blockquote>
+<p>IPv4 地址在 2011 年已经分配完毕，现在再申请的话分配的都是 IPv6。<br>目前国内物联网巨头使用都是 IPv6 地址，例如：腾讯、京东、阿里、百度、小米、华为…</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="通过-Wi-Fi-图标查看"><a href="#通过-Wi-Fi-图标查看" class="headerlink" title="通过 Wi-Fi 图标查看"></a>通过 Wi-Fi 图标查看</h2><ol>
+<li>在 MacOS 启动后</li>
+<li>从屏幕右上角找到 Wi-Fi 标志</li>
+<li>链接 Wi-Fi 后，按住 <mark class="label default">⌥Option</mark> 键的同时点击 Wi-Fi 标志，即可看到 IPv4 地址。</li>
+</ol>
+<img src="/62974/wifi.jpg" class="">
+
+<h2 id="网络配置内查看"><a href="#网络配置内查看" class="headerlink" title="网络配置内查看"></a>网络配置内查看</h2><ol>
+<li>从屏幕左上角找到  标志</li>
+<li>依次点按「系统偏好设置-网络-高级-TCP/IP」，即可看到 IPv4 地址。</li>
+</ol>
+<img src="/62974/tcp.jpg" class="">
+
+<h2 id="终端方式"><a href="#终端方式" class="headerlink" title="终端方式"></a>终端方式</h2><ol>
+<li><mark class="label default">⌘Command + 空格键</mark> 打开聚焦搜索</li>
+<li>输入 “terminal” 或 “终端” 回车，以此打开终端.app。</li>
+<li>在终端内输入 <mark class="label default">ipconfig getifaddr en0</mark> 或 <mark class="label default">osascript -e IPv4 address of (system info)</mark>，即可看到 IPv4 地址。</li>
+</ol>
+<blockquote>
+<p>Windows用户可在 CMD 运行工具下输入 ifconfig 进行查看</p>
+</blockquote>
+<img src="/62974/ipv4.jpg" class="">]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>IP</tag>
+        <tag>局域网IP</tag>
+        <tag>192.168.0.0</tag>
+        <tag>IPv4</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统文件-目录下的.DS_Store文件是什么？</title>
+    <url>/23606/</url>
+    <content><![CDATA[<p>.DS_Store 储存的是 Spotlight 注释、目录的自定义属性、文件的图标位置、视图设置和背景色… 跟 Window 系统的 desktop.ini 文件功能相同。当您给别人传输资料时，建议删除 .DS_Store（PS：特别是开发人员）。</p>
+<p>删除当前目录下的.DS_Store，请使用<a href="/881/" title="终端.app">终端.app</a>执行 <mark class="label default">rm -f .DS_Store</mark>。</p>
+<p>禁止系统自动生成.DS_Store，请执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool TRUE2;</span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure>
+
+<p>重新开启，请执行</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults delete com.apple.desktopservices DSDontWriteNetworkStores;</span><br><span class="line">killall Finde</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>系统文件</category>
+      </categories>
+      <tags>
+        <tag>.DS_Store</tag>
+        <tag>desktop.ini</tag>
+        <tag>rm -f .DS_Store</tag>
+      </tags>
+  </entry>
+</search>

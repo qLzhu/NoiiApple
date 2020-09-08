@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.1.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#222">
+  <meta name="google-site-verification" content="6BjKTRWhfD_KmT8CoJhEMtXp5RdD18GZflC0llCd7h0">
+  <meta name="baidu-site-verification" content="joZHpTfaSD">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.noiiapple.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="MacOS 系统默认内置了截图和录屏功能，都集成在了 “截屏.app” 上。因为它是系统的一部分，所以能够跟 MacOS 高度融合。一般情况下，我们不需要先打开 “截屏.app”，就可以直接使用系统预设的快捷键，进行截屏或者录屏。但是该App有个短处就是没办法长截图和录制电脑自己的声音。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基础知识-截屏和录屏视频">
+<meta property="og:url" content="https://www.noiiapple.com/44965/index.html">
+<meta property="og:site_name" content="NoiiApple">
+<meta property="og:description" content="MacOS 系统默认内置了截图和录屏功能，都集成在了 “截屏.app” 上。因为它是系统的一部分，所以能够跟 MacOS 高度融合。一般情况下，我们不需要先打开 “截屏.app”，就可以直接使用系统预设的快捷键，进行截屏或者录屏。但是该App有个短处就是没办法长截图和录制电脑自己的声音。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.noiiapple.com/44965/%E5%BD%95%E5%B1%8F.png">
+<meta property="og:image" content="https://www.noiiapple.com/44965/QuickTime.png">
+<meta property="article:published_time" content="2020-07-27T09:45:02.000Z">
+<meta property="article:modified_time" content="2020-08-29T09:47:12.999Z">
+<meta property="article:author" content="Mr.QinLzhu">
+<meta property="article:tag" content="截屏">
+<meta property="article:tag" content="录制视频">
+<meta property="article:tag" content="MacOS如何截屏">
+<meta property="article:tag" content="⌘Command+⇧Shift+5">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.noiiapple.com/44965/%E5%BD%95%E5%B1%8F.png">
+
+<link rel="canonical" href="https://www.noiiapple.com/44965/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+
+<link href="https://fonts.loli.net/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.loli.net/css?family=Roboto+Slab" rel="stylesheet">
+
+<script>
+	let OriginTitile = document.title;
+	let titleTime;
+	document.addEventListener('visibilitychange', function() {
+    if (document.hidden) {
+      document.title = '(つェ⊂)我藏好了哦~ ' + OriginTitile;
+      clearTimeout(titleTime);
+    }
+    else {
+      document.title = '(*´∇｀*) 被你发现啦~ ' + OriginTitile;
+      titleTime = setTimeout(function() {
+        document.title = OriginTitile;
+      }, 2000);
+    }
+	});
+</script>
+  <title>基础知识-截屏和录屏视频 | NoiiApple</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">NoiiApple</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">MacOS Tips...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">59</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部文章<span class="badge">17</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%AA%E5%B1%8F"><span class="nav-number">1.</span> <span class="nav-text">截屏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BD%95%E5%B1%8F"><span class="nav-number">2.</span> <span class="nav-text">录屏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AB%98%E7%BA%A7%E9%83%A8%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">高级部分</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mr.QinLzhu"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Mr.QinLzhu</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">17</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">59</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://siyou.coding.net/public/noiiapple/noiiapple/git" title="Coding → https:&#x2F;&#x2F;siyou.coding.net&#x2F;public&#x2F;noiiapple&#x2F;noiiapple&#x2F;git" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:qinlzhu@outlook.com" title="E-Mail → mailto:qinlzhu@outlook.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i></a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.noiiapple.com/44965/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Mr.QinLzhu">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="NoiiApple">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          基础知识-截屏和录屏视频
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发布时间</span>
+
+              <time title="创建时间：2020-07-27 17:45:02" itemprop="dateCreated datePublished" datetime="2020-07-27T17:45:02+08:00">2020-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新时间</span>
+                <time title="修改时间：2020-08-29 17:47:12" itemprop="dateModified" datetime="2020-08-29T17:47:12+08:00">2020-08-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/" itemprop="url" rel="index"><span itemprop="name">基础知识</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/44965/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/44965/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>MacOS 系统默认内置了截图和录屏功能，都集成在了 <mark class="label default">“截屏.app”</mark> 上。因为它是系统的一部分，所以能够跟 MacOS 高度融合。一般情况下，我们不需要先打开 <mark class="label default">“截屏.app”</mark>，就可以直接使用系统预设的快捷键，进行截屏或者录屏。但是该App有个短处就是没办法长截图和录制电脑自己的声音。</p>
+<a id="more"></a>
+
+<h2 id="截屏"><a href="#截屏" class="headerlink" title="截屏"></a>截屏</h2><mark class="label default">“截屏.app”</mark> 位于<mark class="label default">“~/应用程序/实用工具/”</mark>内。默认情况下，我们的截图会以<mark class="label default">“截屏\[日期\]\[时间\].png”</mark>为名称存储到桌面。
+
+<p>快捷键：<br>系统预设的快捷键可到“系统偏好设置-键盘-快捷键-截屏”内查看</p>
+<ul>
+<li><mark class="label success">⌘Command + ⇧Shift + 3</mark> 截取整个屏幕</li>
+<li><mark class="label success">⌘Command + ⇧Shift + 4</mark> 截取所选区域</li>
+<li><mark class="label success">⌘Command + ⇧Shift + 6</mark> 截取 TouchBar 屏幕
+
+</li>
+</ul>
+<mark class="label success">⌃Control</mark> 键跟上述快捷键组合使用，可把截图保存到剪切板，跟别人聊天或者粘贴到文稿时非常有用。<br>
+
+<mark class="label success">⌘Command + ⇧Shift + 4</mark> + <mark class="label success">“空格键”</mark>可截取App窗口。
+
+<h2 id="录屏"><a href="#录屏" class="headerlink" title="录屏"></a>录屏</h2><p>快捷键：</p>
+<ul>
+<li><mark class="label success">⌘Command + ⇧Shift + 5</mark> 选择全屏录制或者局部录制
+
+</li>
+</ul>
+<p><img src="%E5%BD%95%E5%B1%8F.png"></p>
+<mark class="label default">“截屏.app”</mark>录制的视频文件会比较大。这时你可以使用<mark class="label default">“QuickTime Player.app”</mark>进行录屏，在保存时选择其它的分辨率导出。
+
+<p><img src="QuickTime.png"></p>
+<h2 id="高级部分"><a href="#高级部分" class="headerlink" title="高级部分"></a>高级部分</h2><p>我们可以使用代码，对<mark class="label default">“截屏.app”</mark>的默认参数及其选项进行更改，例如：截屏时系统默认保存的图片是 PNG 格式，我们可以使用相关代码把它改为 JPG 格式。</p>
+<p><strong>操作步骤：</strong></p>
+<ol>
+<li>打开<mark class="label default">“terminal.app”</mark></li>
+<li>根据自己的需求，复制下方相关代码，粘贴到<mark class="label default">“terminal.app”</mark>内回车确定</li>
+</ol>
+<p>更改截屏图片的保存位置</p>
+<ul>
+<li>下述命令整句话的意思是：保存到当用户目录下的桌面里并重启服务</li>
+<li><mark class="label default">~/Desktop</mark>
+<ul>
+<li><mark class="label default">~/</mark> 表示当前用户的根目录（PS：访达侧边栏有个🏠图标，跟你用户名组合的目录就是）</li>
+<li><mark class="label default">Desktop</mark> 当前用户目录下的桌面
+
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.screencapture location ~/Desktop &amp;&amp; killall SystemUIServer</span><br></pre></td></tr></table></figure>
+
+<p>更改截屏图片格式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.screencapture <span class="built_in">type</span> jpg &amp;&amp; killall SystemUIServer</span><br></pre></td></tr></table></figure>
+
+<p>更改截屏图片的命名方式</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.screencapture name <span class="string">&quot;截屏要保存的名称&quot;</span> &amp;&amp; killall SystemUIServer</span><br></pre></td></tr></table></figure>
+
+<p>去除App窗口截屏时的阴影效果</p>
+<ul>
+<li>还原的话，<mark class="label default">true</mark> 改为 <mark class="label default">false</mark> 即可</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">defaults write com.apple.screencapture <span class="built_in">disable</span>-shadow -bool <span class="literal">true</span> &amp;&amp; killall SystemUIServer</span><br></pre></td></tr></table></figure>
+
+<p>自定义截屏延迟时间、名称和格式</p>
+<ul>
+<li><mark class="label default">-T 3</mark> 表示延迟3秒再截屏</li>
+<li><mark class="label default">MacbookPro.jpg</mark> 图片名称及其格式</li>
+<li>注意：该命令在哪个位置执行的，图片就保存在哪（打开终端没 <mark class="label default">cd</mark> 的话，就是用户的根目录【<mark class="label default">~</mark>】）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screencapture -T 3 MacbookPro.jpg</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Mr.QinLzhu
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://www.noiiapple.com/44965/" title="基础知识-截屏和录屏视频">https://www.noiiapple.com/44965/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%88%AA%E5%B1%8F/" rel="tag"># 截屏</a>
+              <a href="/tags/%E5%BD%95%E5%88%B6%E8%A7%86%E9%A2%91/" rel="tag"># 录制视频</a>
+              <a href="/tags/MacOS%E5%A6%82%E4%BD%95%E6%88%AA%E5%B1%8F/" rel="tag"># MacOS如何截屏</a>
+              <a href="/tags/%E2%8C%98Command-%E2%87%A7Shift-5/" rel="tag"># ⌘Command+⇧Shift+5</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/12374/" rel="next" title="基础知识-程序坞的基本使用">
+      基础知识-程序坞的基本使用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-hand-point-right"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mr.QinLzhu</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">14k</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"fvBXiThyTuo31WbLeXU8FbnK-gzGzoHsz","appKey":"BtBG3bqbx6AkgY741SxPHyc8","placeholder":"评论时，请填写昵称和邮箱，回复会以邮件的形式发送给您！","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":false,"comment_count":true,"recordIP":false,"serverURLs":null}
+    ));
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
