@@ -458,43 +458,6 @@
       </tags>
   </entry>
   <entry>
-    <title>故障问题-忘记开机密码</title>
-    <url>/39325/</url>
-    <content><![CDATA[<h2 id="使用-Apple-ID-重置密码"><a href="#使用-Apple-ID-重置密码" class="headerlink" title="使用 Apple ID 重置密码"></a>使用 Apple ID 重置密码</h2><p>开机后，在登陆界面，持续输入三次错误的密码进行登录，直到系统提示您可以使用 Apple ID 重置密码时为止。</p>
-<ol>
-<li>点按「密码提示框」最下方的：……使用您的 Apple ID 来重置 ▶︎</li>
-<li>输入 ID 账户及其密码</li>
-<li>系统重启后，输入新的登录密码<a id="more"></a>
-
-</li>
-</ol>
-<h2 id="使用-MacOS-恢复功能重置密码"><a href="#使用-MacOS-恢复功能重置密码" class="headerlink" title="使用 MacOS 恢复功能重置密码"></a>使用 MacOS 恢复功能重置密码</h2><ol>
-<li>开机后，快速按下 <mark class="label default">⌘Command + R</mark> 键进入 MacOS 的恢复界面，直到您看到 Apple 标志或旋转的地球松手。</li>
-<li>点按屏幕左上角菜单栏中的“实用工具-终端”。</li>
-<li>在终端窗口中键入 <mark class="label default">resetpassword</mark> 回车，系统就会弹出「重设密码」程序。</li>
-<li>根据要求重置密码并重启。</li>
-</ol>
-<h2 id="温馨提示"><a href="#温馨提示" class="headerlink" title="温馨提示"></a>温馨提示</h2><div class="note danger"><p>普通账户无法重置管理员账户的密码！</p>
-</div>
-
-<p>您的 Mac 带 TouchBar 的话，在重置密码后，可能会遇到无法使用指纹进行解锁的情况。这是因为我们在重置账户密码时，系统删除了原来的「指纹ID」设置。所以，您只需要再重新录入指纹，并开启相关选项，即可解决。</p>
-<blockquote class="blockquote-center">
-<p>路径：系统偏好设置-触控ID-添加指纹</p>
-
-</blockquote>
-
-<p>更多问题请参考 <a href="https://support.apple.com/zh-cn/HT202860">Apple 技术支持</a> 相关解答。</p>
-]]></content>
-      <categories>
-        <category>故障问题</category>
-      </categories>
-      <tags>
-        <tag>密码</tag>
-        <tag>登录密码</tag>
-        <tag>忘记开机密码</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>故障问题-app程序损坏</title>
     <url>/17717/</url>
     <content><![CDATA[<p>如果我们直接安装或者接收别人传来的 .app 程序时，有时会提示“xxx.app 已损坏，无法打开。您应将它移除到废纸篓。” 的问题。</p>
@@ -544,26 +507,40 @@
       </tags>
   </entry>
   <entry>
-    <title>系统指令-删除程序的卸载残留</title>
-    <url>/2296/</url>
-    <content><![CDATA[<p>MacOS 系统上卸载程序，我们通常的做法就是，直接删除位于 “访达-应用程序” 里面的App；又或者按住 <mark class="label default">⌥option</mark> 直接在启动台卸载（只适用于从 App Store 下载的程序）。这两种做法都是不会删除程序的用户配置及其其它关键信息的，时间长了系统虽然会帮我们自动清理一些残留。如果我们现在就不想保留哪？此时<mark class="label warning">可以使用 mdfind 命令，手动查询跟程序相关的文件并删除</mark>。</p>
-<div class="note "><p>mdfind 其实就是 MacOS 的聚焦搜索 Spotlight。如果您的 Spotlight 不正常工作，也可以 <code>mdutil -E</code> 强制重建索引数据库</p>
+    <title>故障问题-忘记开机密码</title>
+    <url>/39325/</url>
+    <content><![CDATA[<h2 id="使用-Apple-ID-重置密码"><a href="#使用-Apple-ID-重置密码" class="headerlink" title="使用 Apple ID 重置密码"></a>使用 Apple ID 重置密码</h2><p>开机后，在登陆界面，持续输入三次错误的密码进行登录，直到系统提示您可以使用 Apple ID 重置密码时为止。</p>
+<ol>
+<li>点按「密码提示框」最下方的：……使用您的 Apple ID 来重置 ▶︎</li>
+<li>输入 ID 账户及其密码</li>
+<li>系统重启后，输入新的登录密码<a id="more"></a>
+
+</li>
+</ol>
+<h2 id="使用-MacOS-恢复功能重置密码"><a href="#使用-MacOS-恢复功能重置密码" class="headerlink" title="使用 MacOS 恢复功能重置密码"></a>使用 MacOS 恢复功能重置密码</h2><ol>
+<li>开机后，快速按下 <mark class="label default">⌘Command + R</mark> 键进入 MacOS 的恢复界面，直到您看到 Apple 标志或旋转的地球松手。</li>
+<li>点按屏幕左上角菜单栏中的“实用工具-终端”。</li>
+<li>在终端窗口中键入 <mark class="label default">resetpassword</mark> 回车，系统就会弹出「重设密码」程序。</li>
+<li>根据要求重置密码并重启。</li>
+</ol>
+<h2 id="温馨提示"><a href="#温馨提示" class="headerlink" title="温馨提示"></a>温馨提示</h2><div class="note danger"><p>普通账户无法重置管理员账户的密码！</p>
 </div>
 
-<p>例如：查询跟 CleanMyMac.app 所有相关的文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查询</span></span><br><span class="line">mdfind -name CleanMyMac</span><br><span class="line"><span class="comment"># /Applications/CleanMyMac X.app</span></span><br><span class="line"><span class="comment"># /Library/LaunchDaemons/com.macpaw.zh.CleanMyMac4.Agent.plist</span></span><br><span class="line"><span class="comment"># /Library/LaunchDaemons/com.macpaw.CleanMyMac4.Agent.plist</span></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># rm -rf 手动强制删除</span></span><br><span class="line"><span class="comment"># 如果路径中有空格的话，注意使用反斜杠转义下</span></span><br><span class="line">rm -rf /Applications/CleanMyMac\ X.app</span><br></pre></td></tr></table></figure>
+<p>您的 Mac 带 TouchBar 的话，在重置密码后，可能会遇到无法使用指纹进行解锁的情况。这是因为我们在重置账户密码时，系统删除了原来的「指纹ID」设置。所以，您只需要再重新录入指纹，并开启相关选项，即可解决。</p>
+<blockquote class="blockquote-center">
+<p>路径：系统偏好设置-触控ID-添加指纹</p>
 
-<p>还可以使用 -onlyin 参数，指定搜索的目录（mdfind -onlyin ~/downloads CleanMyMac）。</p>
+</blockquote>
+
+<p>更多问题请参考 <a href="https://support.apple.com/zh-cn/HT202860">Apple 技术支持</a> 相关解答。</p>
 ]]></content>
       <categories>
-        <category>系统指令</category>
+        <category>故障问题</category>
       </categories>
       <tags>
-        <tag>mdfind</tag>
-        <tag>uninstall</tag>
-        <tag>卸载</tag>
-        <tag>卸载残留</tag>
-        <tag>CleanMyMac X.app</tag>
+        <tag>密码</tag>
+        <tag>登录密码</tag>
+        <tag>忘记开机密码</tag>
       </tags>
   </entry>
   <entry>
@@ -604,61 +581,26 @@
       </tags>
   </entry>
   <entry>
-    <title>系统指令-启动web服务的方法</title>
-    <url>/43447/</url>
-    <content><![CDATA[<p>MacOS 系统对开发很友好，默认集成了 Python2 和 PHP 语言。我们可以利用它们开启 web 服务，给远在它处或局域网下的朋友们共享我们的目录。注意：朋友只能在线一个进行访问，多位朋友则不行。</p>
-<blockquote>
-<p>至于为什么不用系统内置的「隔空投送」？<br>那是因为，隔空投送对文件大小和系统都有要求。例如您想给使用 Android 或者 window 朋友传输文件，难道还要使用隔空投送嘛…</p>
-</blockquote>
-<p>开启步骤：</p>
-<ol>
-<li>打开终端（<a href="/881/" title="请查阅“基础知识-终端工具”">请查阅“基础知识-终端工具”</a>）。</li>
-<li>输入 <mark class="label default">cd</mark> 命令进到要共享的目录。</li>
-<li>选择下述任何一个命令进行执行。</li>
-<li>把 <a href="https://localhost:8000/">https://localhost:8000</a> 中的 localhost 改为自己的 <a href="#">Post not found: IPv4 系统服务-查看本机IP地址</a> 地址，分享给朋友。</li>
-<li>让朋友用浏览器打开您分享的链接。</li>
-<li>关闭终端或按 <mark class="label default">⌃Control + C</mark>终结web服务。</li>
-</ol>
-<img src="/43447/ipv4.jpg" class="">
-<a id="more"></a>
+    <title>系统指令-删除程序的卸载残留</title>
+    <url>/2296/</url>
+    <content><![CDATA[<p>MacOS 系统上卸载程序，我们通常的做法就是，直接删除位于 “访达-应用程序” 里面的App；又或者按住 <mark class="label default">⌥option</mark> 直接在启动台卸载（只适用于从 App Store 下载的程序）。这两种做法都是不会删除程序的用户配置及其其它关键信息的，时间长了系统虽然会帮我们自动清理一些残留。如果我们现在就不想保留哪？此时<mark class="label warning">可以使用 mdfind 命令，手动查询跟程序相关的文件并删除</mark>。</p>
+<div class="note "><p>mdfind 其实就是 MacOS 的聚焦搜索 Spotlight。如果您的 Spotlight 不正常工作，也可以 <code>mdutil -E</code> 强制重建索引数据库</p>
+</div>
 
-<p>Python</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8000</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="comment"># 需要先升级 python 才可使用 python3 命令</span></span><br><span class="line">python3 -m http.server --cgi 8000</span><br></pre></td></tr></table></figure>
+<p>例如：查询跟 CleanMyMac.app 所有相关的文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 查询</span></span><br><span class="line">mdfind -name CleanMyMac</span><br><span class="line"><span class="comment"># /Applications/CleanMyMac X.app</span></span><br><span class="line"><span class="comment"># /Library/LaunchDaemons/com.macpaw.zh.CleanMyMac4.Agent.plist</span></span><br><span class="line"><span class="comment"># /Library/LaunchDaemons/com.macpaw.CleanMyMac4.Agent.plist</span></span><br><span class="line"><span class="comment"># ...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># rm -rf 手动强制删除</span></span><br><span class="line"><span class="comment"># 如果路径中有空格的话，注意使用反斜杠转义下</span></span><br><span class="line">rm -rf /Applications/CleanMyMac\ X.app</span><br></pre></td></tr></table></figure>
 
-<p>PHP</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">php -S localhost:8000</span><br></pre></td></tr></table></figure>
-
-<p>前端程序猿可以使用 npm 安装 serve 服务</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g serve</span><br><span class="line"></span><br><span class="line"># 启动 web 服务命令，无需写端口号</span><br><span class="line"># 默认 5000 端口</span><br><span class="line">serve</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>系统指令</category>
-      </categories>
-      <tags>
-        <tag>www</tag>
-        <tag>web</tag>
-        <tag>localhost</tag>
-        <tag>php</tag>
-        <tag>python2</tag>
-        <tag>https://localhost:8000</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>系统指令 Xcode-select --install</title>
-    <url>/44387/</url>
-    <content><![CDATA[<p>如果您是程序猿并且使用的是 Mac，肯定避免不了要安装 Xcode，因为它内置了很多开发所必须的环境。在最新版本的 Xcode 中，默认不再集成 「Xcode command line tools」。如果您不是 iOS 或 OS X 开发者，可以跳过 XCode（程序大小近10G）直接安装 「Xcode command line tools」 了。</p>
-<p>在 <a href="/881/" title="基础知识-终端工具">基础知识-终端工具</a> 内，键入如下命令，在弹出的界面点 Install 同意即可。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
-
-<p>如果 Install 不了，可到 <a href="https://developer.apple.com/download/more/">Developer Apple</a> 内下载相应的包。</p>
-<p>如果您想了解 Xcode command line tools 包含多少可用的命令，可以到 <mark class="label default">/Library/Developer/CommandLineTools/</mark> 查看，另外如果您想卸载的话直接删除该目录即可。</p>
+<p>还可以使用 -onlyin 参数，指定搜索的目录（mdfind -onlyin ~/downloads CleanMyMac）。</p>
 ]]></content>
       <categories>
         <category>系统指令</category>
       </categories>
       <tags>
-        <tag>xcode</tag>
-        <tag>git</tag>
-        <tag>xcode command line tools</tag>
+        <tag>mdfind</tag>
+        <tag>uninstall</tag>
+        <tag>卸载</tag>
+        <tag>卸载残留</tag>
+        <tag>CleanMyMac X.app</tag>
       </tags>
   </entry>
   <entry>
@@ -699,6 +641,64 @@
         <tag>SIP</tag>
         <tag>System Integrity Protection</tag>
         <tag>系统完整性保护</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统指令 Xcode-select --install</title>
+    <url>/44387/</url>
+    <content><![CDATA[<p>如果您是程序猿并且使用的是 Mac，肯定避免不了要安装 Xcode，因为它内置了很多开发所必须的环境。在最新版本的 Xcode 中，默认不再集成 「Xcode command line tools」。如果您不是 iOS 或 OS X 开发者，可以跳过 XCode（程序大小近10G）直接安装 「Xcode command line tools」 了。</p>
+<p>在 <a href="/881/" title="基础知识-终端工具">基础知识-终端工具</a> 内，键入如下命令，在弹出的界面点 Install 同意即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
+
+<p>如果 Install 不了，可到 <a href="https://developer.apple.com/download/more/">Developer Apple</a> 内下载相应的包。</p>
+<p>如果您想了解 Xcode command line tools 包含多少可用的命令，可以到 <mark class="label default">/Library/Developer/CommandLineTools/</mark> 查看，另外如果您想卸载的话直接删除该目录即可。</p>
+]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>xcode</tag>
+        <tag>git</tag>
+        <tag>xcode command line tools</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统指令-启动web服务的方法</title>
+    <url>/43447/</url>
+    <content><![CDATA[<p>MacOS 系统对开发很友好，默认集成了 Python2 和 PHP 语言。我们可以利用它们开启 web 服务，给远在它处或局域网下的朋友们共享我们的目录。注意：朋友只能在线一个进行访问，多位朋友则不行。</p>
+<blockquote>
+<p>至于为什么不用系统内置的「隔空投送」？<br>那是因为，隔空投送对文件大小和系统都有要求。例如您想给使用 Android 或者 window 朋友传输文件，难道还要使用隔空投送嘛…</p>
+</blockquote>
+<p>开启步骤：</p>
+<ol>
+<li>打开终端（<a href="/881/" title="请查阅“基础知识-终端工具”">请查阅“基础知识-终端工具”</a>）。</li>
+<li>输入 <mark class="label default">cd</mark> 命令进到要共享的目录。</li>
+<li>选择下述任何一个命令进行执行。</li>
+<li>把 <a href="https://localhost:8000/">https://localhost:8000</a> 中的 localhost 改为自己的 <a href="#">Post not found: IPv4 系统服务-查看本机IP地址</a> 地址，分享给朋友。</li>
+<li>让朋友用浏览器打开您分享的链接。</li>
+<li>关闭终端或按 <mark class="label default">⌃Control + C</mark>终结web服务。</li>
+</ol>
+<img src="/43447/ipv4.jpg" class="">
+<a id="more"></a>
+
+<p>Python</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8000</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="comment"># 需要先升级 python 才可使用 python3 命令</span></span><br><span class="line">python3 -m http.server --cgi 8000</span><br></pre></td></tr></table></figure>
+
+<p>PHP</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">php -S localhost:8000</span><br></pre></td></tr></table></figure>
+
+<p>前端程序猿可以使用 npm 安装 serve 服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g serve</span><br><span class="line"></span><br><span class="line"># 启动 web 服务命令，无需写端口号</span><br><span class="line"># 默认 5000 端口</span><br><span class="line">serve</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>www</tag>
+        <tag>web</tag>
+        <tag>localhost</tag>
+        <tag>php</tag>
+        <tag>python2</tag>
+        <tag>https://localhost:8000</tag>
       </tags>
   </entry>
   <entry>
