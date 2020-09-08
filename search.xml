@@ -150,79 +150,6 @@
       </tags>
   </entry>
   <entry>
-    <title>基础知识-输入法</title>
-    <url>/34408/</url>
-    <content><![CDATA[<p>在使用 Mac 电脑时，只要您写作或者编辑文档，肯定避免不了使用输入法，基础的操作相信大家都会。例如：</p>
-<p>常用快捷键：</p>
-<ul>
-<li><mark class="label default">中/英键</mark>：只切换中英文输入法</li>
-<li><mark class="label default">⌥Option + ⌃Control + 空格键</mark>：选择输入法菜单中下一个输入法</li>
-<li><mark class="label default">⌃Control + 空格键</mark>：选择输入法菜单中上一个输入法</li>
-<li><mark class="label default">⇧Shift + 6</mark>：颜文字……(^з^)-☆♂（中文状态）</li>
-<li><mark class="label default">⇧Shift + ⌥Option + K</mark>：</li>
-<li><mark class="label default">⌃Control + ⌘Command + 空格键</mark>：字符检查器，在这里能找到您日常所需的所有特殊字符
-<a id="more"></a>
-
-</li>
-</ul>
-<p>添加删除输入法：<br>在 “系统偏好设置-键盘-输入法” 里更改</p>
-<img src="/34408/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%BE%93%E5%85%A5%E6%B3%95.jpg" class="" title="添加删除输入法">
-
-<p>除了上述基础又基础的输入法使用外。偶尔情况下，教师、家长、新媒体运营、翻译工作者等群体，可能会遇到需要输入生僻字、给生僻字标注拼音、给英文单词标注音标… …情况</p>
-<p>这时我们就需要详细介绍下，MacOS 系统输入法的小技巧了～</p>
-<h2 id="输入生僻字"><a href="#输入生僻字" class="headerlink" title="输入生僻字"></a>输入生僻字</h2><p>中华文化博大精深，生活中遇见自己不认识的汉字，很正常嘛！这时我们要录入该字，怎么办？不着急～ 我们先观察观察字体结构，了解构造组成部分后，再把它拆分成多个简单的汉字，然后再在输入法里分别输入，按 <mark class="label default">Shift + 空格键</mark> 调出检测结果提示框，这样匹配的结果，不仅显示生僻字还会显示生僻字的拼音。</p>
-<p>以“泖mǎo”为例，我们把它拆分成左右两部分（氵shui + 卯mao），然后分别输入，按 <mark class="label default">Shift + 空格键</mark> 就会调出如下结果。</p>
-<img src="/34408/%E6%B3%96.jpg" class="" title="泖字的拆分">
-
-<h2 id="输入汉语拼音"><a href="#输入汉语拼音" class="headerlink" title="输入汉语拼音"></a>输入汉语拼音</h2><p>MacOS 系统内置了 ApplePressAndHoldEnabled 功能，中文状态下长按字母能重复性输入；英文状态下长按，可弹出元音音标提示框。利用该功能，我们可以输入汉语拼音字母的 1、2、4 声。</p>
-<img src="/34408/ApplePressAndHoldEnabled.jpg" class="" title="ApplePressAndHoldEnabled">
-
-<p>那么你可能会问，怎么没有 3 声哪？这是因为 ApplePressAndHoldEnabled 功能，是为英语音标专门设计的。所以，汉语的拼音还不是很兼容。如果您不喜欢 ApplePressAndHoldEnabled，我们可以使用 defaults 命令对其进行关闭。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write -g ApplePressAndHoldEnabled -bool <span class="literal">false</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">defaults write NSGlobalDomain ApplePressAndHoldEnabled -boolean <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 针对应用程序进行关闭</span></span><br><span class="line">defaults write <span class="string">&#x27;com.microsoft.VSCode&#x27;</span> ApplePressAndHoldEnabled -bool <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复 ApplePressAndHoldEnabled 功能</span></span><br><span class="line">defaults delete -g ApplePressAndHoldEnabled</span><br><span class="line"></span><br><span class="line"><span class="comment"># 枚举 ApplePressAndHoldEnabled 配置情况</span></span><br><span class="line"><span class="comment"># 未设置的不会显示任何结果</span></span><br><span class="line">defaults <span class="built_in">read</span> | grep ApplePressAndHoldEnabled</span><br></pre></td></tr></table></figure>
-
-<p>输入 3 声的字母，我们可以利用输入法扩展的 ⌥Option 组合键进行输入。<mark class="label default">⌥Option + A\E\V\~ + 元音字母</mark> 可以分别输入字母的 1、2、3、4 声。</p>
-<ul>
-<li><mark class="label default">⌥Option + A + U</mark>：一声 ū</li>
-<li><mark class="label default">⌥Option + E + U</mark>：二声 ú</li>
-<li><mark class="label default">⌥Option + V + U</mark>：三声 ǔ</li>
-<li><mark class="label default">⌥Option + ~ + U</mark>：四声 ù
-
-</li>
-</ul>
-<p>单个汉字的全拼，我们可以从系统自带的，词典内的「汉语词典」里进行复制。</p>
-<img src="/34408/%E7%A7%92.jpg" class="" title="汉语词典里的拼音">
-
-<p>除了获取单个汉字的全拼外，您可能还会遇到给多个文字，甚至给一段话添加拼音的情况。这时我们可以使用 Pages 的「拼音指南文本」功能，给它们添加。但是「拼音指南文本」有个缺陷，就是没办法对拼音进行个性化设置。</p>
-<img src="/34408/%E6%8B%BC%E9%9F%B3%E6%8C%87%E5%8D%97%E6%96%87%E6%9C%AC.jpg" class="" title="拼音指南文本">
-<img src="/34408/%E6%8B%BC%E9%9F%B3%E6%8C%87%E5%8D%97%E6%96%87%E6%9C%AC%E7%BB%93%E6%9E%9C.jpg" class="" title="拼音指南文本结果">
-
-<h2 id="输入国际音标"><a href="#输入国际音标" class="headerlink" title="输入国际音标"></a>输入国际音标</h2><ol>
-<li>英文状态下长按相关字母。</li>
-<li>在「词典-英汉·汉英词典」输入单词并复制音标。</li>
-<li><mark class="label default">⌃Control + ⌘Command + 空格键</mark> 调出字符检查器，然后在「音标字母」内找。
-<br>没有「音标字母」的，点击字符检查器左上角的 “设置” 图标进行追加。</li>
-</ol>
-<img src="/34408/%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D.jpg" class="" title="音标字母">
-
-<ol start="4">
-<li>ApplePressAndHoldEnabled 功能、字符检查器里没有的国际音标，可以到网络上进行搜索，然后添加到 “文本替换（“系统偏好设置-键盘-文本”）” 里。使用时只需要输入，「输入码」里面设定的单词，即可输入。</li>
-</ol>
-<img src="/34408/%E7%89%B9%E6%AE%8A%E9%9F%B3%E6%A0%87.jpg" class="" title="特殊音标">
-
-<br/>
-
-<p>最后的最后：<br>嫌 MacOS 输入国际音标麻烦的，<br>又或者某个国际音标实在找不到！可参照 <a href="https://support.apple.com/zh-cn/guide/mac-help/mchlp2866/mac">Apple 官网</a> 给出的示例文档，定制自己的个性化输入法，又或者下载搜狗输入法。</p>
-]]></content>
-      <categories>
-        <category>基础知识</category>
-      </categories>
-      <tags>
-        <tag>输入法</tag>
-        <tag>拼音</tag>
-        <tag>国际音标</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基础知识-终端工具的基本使用</title>
     <url>/881/</url>
     <content><![CDATA[<p>只要使用您经常使用电脑，肯定或多或少听说过电脑终端。并且遇到稍微复杂点的电脑故障时，教程或者案例总是教我们如何如何在终端中操作、及其如何如何终结。那么，终端到底是什么？</p>
@@ -414,6 +341,79 @@
       </tags>
   </entry>
   <entry>
+    <title>基础知识-输入法</title>
+    <url>/34408/</url>
+    <content><![CDATA[<p>在使用 Mac 电脑时，只要您写作或者编辑文档，肯定避免不了使用输入法，基础的操作相信大家都会。例如：</p>
+<p>常用快捷键：</p>
+<ul>
+<li><mark class="label default">中/英键</mark>：只切换中英文输入法</li>
+<li><mark class="label default">⌥Option + ⌃Control + 空格键</mark>：选择输入法菜单中下一个输入法</li>
+<li><mark class="label default">⌃Control + 空格键</mark>：选择输入法菜单中上一个输入法</li>
+<li><mark class="label default">⇧Shift + 6</mark>：颜文字……(^з^)-☆♂（中文状态）</li>
+<li><mark class="label default">⇧Shift + ⌥Option + K</mark>：</li>
+<li><mark class="label default">⌃Control + ⌘Command + 空格键</mark>：字符检查器，在这里能找到您日常所需的所有特殊字符
+<a id="more"></a>
+
+</li>
+</ul>
+<p>添加删除输入法：<br>在 “系统偏好设置-键盘-输入法” 里更改</p>
+<img src="/34408/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%BE%93%E5%85%A5%E6%B3%95.jpg" class="" title="添加删除输入法">
+
+<p>除了上述基础又基础的输入法使用外。偶尔情况下，教师、家长、新媒体运营、翻译工作者等群体，可能会遇到需要输入生僻字、给生僻字标注拼音、给英文单词标注音标… …情况</p>
+<p>这时我们就需要详细介绍下，MacOS 系统输入法的小技巧了～</p>
+<h2 id="输入生僻字"><a href="#输入生僻字" class="headerlink" title="输入生僻字"></a>输入生僻字</h2><p>中华文化博大精深，生活中遇见自己不认识的汉字，很正常嘛！这时我们要录入该字，怎么办？不着急～ 我们先观察观察字体结构，了解构造组成部分后，再把它拆分成多个简单的汉字，然后再在输入法里分别输入，按 <mark class="label default">Shift + 空格键</mark> 调出检测结果提示框，这样匹配的结果，不仅显示生僻字还会显示生僻字的拼音。</p>
+<p>以“泖mǎo”为例，我们把它拆分成左右两部分（氵shui + 卯mao），然后分别输入，按 <mark class="label default">Shift + 空格键</mark> 就会调出如下结果。</p>
+<img src="/34408/%E6%B3%96.jpg" class="" title="泖字的拆分">
+
+<h2 id="输入汉语拼音"><a href="#输入汉语拼音" class="headerlink" title="输入汉语拼音"></a>输入汉语拼音</h2><p>MacOS 系统内置了 ApplePressAndHoldEnabled 功能，中文状态下长按字母能重复性输入；英文状态下长按，可弹出元音音标提示框。利用该功能，我们可以输入汉语拼音字母的 1、2、4 声。</p>
+<img src="/34408/ApplePressAndHoldEnabled.jpg" class="" title="ApplePressAndHoldEnabled">
+
+<p>那么你可能会问，怎么没有 3 声哪？这是因为 ApplePressAndHoldEnabled 功能，是为英语音标专门设计的。所以，汉语的拼音还不是很兼容。如果您不喜欢 ApplePressAndHoldEnabled，我们可以使用 defaults 命令对其进行关闭。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write -g ApplePressAndHoldEnabled -bool <span class="literal">false</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">defaults write NSGlobalDomain ApplePressAndHoldEnabled -boolean <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 针对应用程序进行关闭</span></span><br><span class="line">defaults write <span class="string">&#x27;com.microsoft.VSCode&#x27;</span> ApplePressAndHoldEnabled -bool <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复 ApplePressAndHoldEnabled 功能</span></span><br><span class="line">defaults delete -g ApplePressAndHoldEnabled</span><br><span class="line"></span><br><span class="line"><span class="comment"># 枚举 ApplePressAndHoldEnabled 配置情况</span></span><br><span class="line"><span class="comment"># 未设置的不会显示任何结果</span></span><br><span class="line">defaults <span class="built_in">read</span> | grep ApplePressAndHoldEnabled</span><br></pre></td></tr></table></figure>
+
+<p>输入 3 声的字母，我们可以利用输入法扩展的 ⌥Option 组合键进行输入。<mark class="label default">⌥Option + A\E\V\~ + 元音字母</mark> 可以分别输入字母的 1、2、3、4 声。</p>
+<ul>
+<li><mark class="label default">⌥Option + A + U</mark>：一声 ū</li>
+<li><mark class="label default">⌥Option + E + U</mark>：二声 ú</li>
+<li><mark class="label default">⌥Option + V + U</mark>：三声 ǔ</li>
+<li><mark class="label default">⌥Option + ~ + U</mark>：四声 ù
+
+</li>
+</ul>
+<p>单个汉字的全拼，我们可以从系统自带的，词典内的「汉语词典」里进行复制。</p>
+<img src="/34408/%E7%A7%92.jpg" class="" title="汉语词典里的拼音">
+
+<p>除了获取单个汉字的全拼外，您可能还会遇到给多个文字，甚至给一段话添加拼音的情况。这时我们可以使用 Pages 的「拼音指南文本」功能，给它们添加。但是「拼音指南文本」有个缺陷，就是没办法对拼音进行个性化设置。</p>
+<img src="/34408/%E6%8B%BC%E9%9F%B3%E6%8C%87%E5%8D%97%E6%96%87%E6%9C%AC.jpg" class="" title="拼音指南文本">
+<img src="/34408/%E6%8B%BC%E9%9F%B3%E6%8C%87%E5%8D%97%E6%96%87%E6%9C%AC%E7%BB%93%E6%9E%9C.jpg" class="" title="拼音指南文本结果">
+
+<h2 id="输入国际音标"><a href="#输入国际音标" class="headerlink" title="输入国际音标"></a>输入国际音标</h2><ol>
+<li>英文状态下长按相关字母。</li>
+<li>在「词典-英汉·汉英词典」输入单词并复制音标。</li>
+<li><mark class="label default">⌃Control + ⌘Command + 空格键</mark> 调出字符检查器，然后在「音标字母」内找。
+<br>没有「音标字母」的，点击字符检查器左上角的 “设置” 图标进行追加。</li>
+</ol>
+<img src="/34408/%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D.jpg" class="" title="音标字母">
+
+<ol start="4">
+<li>ApplePressAndHoldEnabled 功能、字符检查器里没有的国际音标，可以到网络上进行搜索，然后添加到 “文本替换（“系统偏好设置-键盘-文本”）” 里。使用时只需要输入，「输入码」里面设定的单词，即可输入。</li>
+</ol>
+<img src="/34408/%E7%89%B9%E6%AE%8A%E9%9F%B3%E6%A0%87.jpg" class="" title="特殊音标">
+
+<br/>
+
+<p>最后的最后：<br>嫌 MacOS 输入国际音标麻烦的，<br>又或者某个国际音标实在找不到！可参照 <a href="https://support.apple.com/zh-cn/guide/mac-help/mchlp2866/mac">Apple 官网</a> 给出的示例文档，定制自己的个性化输入法，又或者下载搜狗输入法。</p>
+]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>输入法</tag>
+        <tag>拼音</tag>
+        <tag>国际音标</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>快捷键-自定义快捷键预设</title>
     <url>/10680/</url>
     <content><![CDATA[<a href="/43680/" title="快捷键-常用快捷键清单">快捷键-常用快捷键清单</a> 文章中，介绍了大家生活中常用的一些快捷键，想了解的请点击前方的链接，进行移步。熟悉这些快捷键的同时，那么，您知道如何自定义快捷键吗？
@@ -507,43 +507,6 @@
       </tags>
   </entry>
   <entry>
-    <title>故障问题-dmg提示无法验证开发者</title>
-    <url>/52375/</url>
-    <content><![CDATA[<p>MacOS 系统在 10.12 版本中，启用了新的安全机制。默认情况下，只会信任在 App Store 下载的软件和拥有开发者 ID 签名的应用程序。简单理解就是，您想使用的程序，必须得通过 Apple 公司的审查机制。否则，您就没办法使用。Apple 这么做不是为了限制您的使用哦，而是，为了我们的系统安全做的考量。</p>
-<blockquote>
-<p>如果打开 .app 程序出现损坏问题，请查阅 <a href="/17717/" title="app程序损坏问题解决方案">app程序损坏问题解决方案</a></p>
-</blockquote>
-<p><strong>例如：</strong></p>
-<p>我安装七牛云的命令行工具 qshell 时，就报了<strong>无法验证开发者</strong>的错误提示。</p>
-<img src="/52375/qshell.jpg" class="">
-<a id="more"></a>
-<blockquote class="blockquote-center">
-<p>这是 MacOS 系统的 <a href="https://support.apple.com/zh-cn/HT202491">Gatekeeper</a> 保护系统造成的。</p>
-
-</blockquote>
-
-<p>如果报此问题，可在按住 <mark class="label default">⌃Control</mark> 键的同时点按应用，从菜单中选取“打开”，然后在出现的提示框中选择“打开”。系统提示时，输入管理员名称和密码。现在，您就可以正常的安装及其使用了。</p>
-<p>我们还可以开启「任何来源」选项，进行解决（PS：MacOS 10.12 版本开始默认不再显示该选项）</p>
-<ol>
-<li>打开<a href="/881/" title="「终端.app」">「终端.app」</a></li>
-<li>输入 <mark class="label default">sudo spctl --master-disable</mark></li>
-<li>输入管理员账户及其密码</li>
-<li>勾选「系统偏好设置-安全性与隐私」里的允许从「任何来源」选项</li>
-</ol>
-<img src="/52375/spctl.jpg" class="">
-
-<p>关闭该选项，请执行 <mark class="label default">sudo spctl --master-enable</mark>。</p>
-]]></content>
-      <categories>
-        <category>故障问题</category>
-      </categories>
-      <tags>
-        <tag>无法验证开发者</tag>
-        <tag>任意来源</tag>
-        <tag>dmg</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>故障问题-忘记开机密码</title>
     <url>/39325/</url>
     <content><![CDATA[<h2 id="使用-Apple-ID-重置密码"><a href="#使用-Apple-ID-重置密码" class="headerlink" title="使用 Apple ID 重置密码"></a>使用 Apple ID 重置密码</h2><p>开机后，在登陆界面，持续输入三次错误的密码进行登录，直到系统提示您可以使用 Apple ID 重置密码时为止。</p>
@@ -578,6 +541,43 @@
         <tag>密码</tag>
         <tag>登录密码</tag>
         <tag>忘记开机密码</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>故障问题-dmg提示无法验证开发者</title>
+    <url>/52375/</url>
+    <content><![CDATA[<p>MacOS 系统在 10.12 版本中，启用了新的安全机制。默认情况下，只会信任在 App Store 下载的软件和拥有开发者 ID 签名的应用程序。简单理解就是，您想使用的程序，必须得通过 Apple 公司的审查机制。否则，您就没办法使用。Apple 这么做不是为了限制您的使用哦，而是，为了我们的系统安全做的考量。</p>
+<blockquote>
+<p>如果打开 .app 程序出现损坏问题，请查阅 <a href="/17717/" title="app程序损坏问题解决方案">app程序损坏问题解决方案</a></p>
+</blockquote>
+<p><strong>例如：</strong></p>
+<p>我安装七牛云的命令行工具 qshell 时，就报了<strong>无法验证开发者</strong>的错误提示。</p>
+<img src="/52375/qshell.jpg" class="">
+<a id="more"></a>
+<blockquote class="blockquote-center">
+<p>这是 MacOS 系统的 <a href="https://support.apple.com/zh-cn/HT202491">Gatekeeper</a> 保护系统造成的。</p>
+
+</blockquote>
+
+<p>如果报此问题，可在按住 <mark class="label default">⌃Control</mark> 键的同时点按应用，从菜单中选取“打开”，然后在出现的提示框中选择“打开”。系统提示时，输入管理员名称和密码。现在，您就可以正常的安装及其使用了。</p>
+<p>我们还可以开启「任何来源」选项，进行解决（PS：MacOS 10.12 版本开始默认不再显示该选项）</p>
+<ol>
+<li>打开<a href="/881/" title="「终端.app」">「终端.app」</a></li>
+<li>输入 <mark class="label default">sudo spctl --master-disable</mark></li>
+<li>输入管理员账户及其密码</li>
+<li>勾选「系统偏好设置-安全性与隐私」里的允许从「任何来源」选项</li>
+</ol>
+<img src="/52375/spctl.jpg" class="">
+
+<p>关闭该选项，请执行 <mark class="label default">sudo spctl --master-enable</mark>。</p>
+]]></content>
+      <categories>
+        <category>故障问题</category>
+      </categories>
+      <tags>
+        <tag>无法验证开发者</tag>
+        <tag>任意来源</tag>
+        <tag>dmg</tag>
       </tags>
   </entry>
   <entry>
@@ -663,45 +663,6 @@
       </tags>
   </entry>
   <entry>
-    <title>系统指令-启动web服务的方法</title>
-    <url>/43447/</url>
-    <content><![CDATA[<p>MacOS 系统对开发很友好，默认集成了 Python2 和 PHP 语言。我们可以利用它们开启 web 服务，给远在它处或局域网下的朋友们共享我们的目录。注意：朋友只能在线一个进行访问，多位朋友则不行。</p>
-<blockquote>
-<p>至于为什么不用系统内置的「隔空投送」？<br>那是因为，隔空投送对文件大小和系统都有要求。例如您想给使用 Android 或者 window 朋友传输文件，难道还要使用隔空投送嘛…</p>
-</blockquote>
-<p>开启步骤：</p>
-<ol>
-<li>打开终端（<a href="/881/" title="请查阅“基础知识-终端工具”">请查阅“基础知识-终端工具”</a>）。</li>
-<li>输入 <mark class="label default">cd</mark> 命令进到要共享的目录。</li>
-<li>选择下述任何一个命令进行执行。</li>
-<li>把 <a href="https://localhost:8000/">https://localhost:8000</a> 中的 localhost 改为自己的 <a href="#">Post not found: IPv4 系统服务-查看本机IP地址</a> 地址，分享给朋友。</li>
-<li>让朋友用浏览器打开您分享的链接。</li>
-<li>关闭终端或按 <mark class="label default">⌃Control + C</mark>终结web服务。</li>
-</ol>
-<img src="/43447/ipv4.jpg" class="">
-<a id="more"></a>
-
-<p>Python</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8000</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="comment"># 需要先升级 python 才可使用 python3 命令</span></span><br><span class="line">python3 -m http.server --cgi 8000</span><br></pre></td></tr></table></figure>
-
-<p>PHP</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">php -S localhost:8000</span><br></pre></td></tr></table></figure>
-
-<p>前端程序猿可以使用 npm 安装 serve 服务</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g serve</span><br><span class="line"></span><br><span class="line"># 启动 web 服务命令，无需写端口号</span><br><span class="line"># 默认 5000 端口</span><br><span class="line">serve</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>系统指令</category>
-      </categories>
-      <tags>
-        <tag>www</tag>
-        <tag>web</tag>
-        <tag>localhost</tag>
-        <tag>php</tag>
-        <tag>python2</tag>
-        <tag>https://localhost:8000</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>系统指令-查看局域网下的IPv4地址</title>
     <url>/62974/</url>
     <content><![CDATA[<p>查看 IPv4 地址之前，我们先科普下基础知识。什么是 IPv4？想明白什么是 IPv4，就得先明白什么是 IP。IP 是网际协议或互联网协议，是用在 TCP/IP 协议簇中的网络层协议。另外 IP 有一个非常重要的属性，就是给每台计算机和设备规定一个地址，也就是我们俗称的 IP 地址。通俗点理解就是两个人做生意需要先约法三章签订协议，然后再写上联系自己的唯一方式比较类似。而 IPv4 表示IP协议的第四个版本 Internet Protocol version 4。</p>
@@ -740,6 +701,45 @@
         <tag>局域网IP</tag>
         <tag>192.168.0.0</tag>
         <tag>IPv4</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统指令-启动web服务的方法</title>
+    <url>/43447/</url>
+    <content><![CDATA[<p>MacOS 系统对开发很友好，默认集成了 Python2 和 PHP 语言。我们可以利用它们开启 web 服务，给远在它处或局域网下的朋友们共享我们的目录。注意：朋友只能在线一个进行访问，多位朋友则不行。</p>
+<blockquote>
+<p>至于为什么不用系统内置的「隔空投送」？<br>那是因为，隔空投送对文件大小和系统都有要求。例如您想给使用 Android 或者 window 朋友传输文件，难道还要使用隔空投送嘛…</p>
+</blockquote>
+<p>开启步骤：</p>
+<ol>
+<li>打开终端（<a href="/881/" title="请查阅“基础知识-终端工具”">请查阅“基础知识-终端工具”</a>）。</li>
+<li>输入 <mark class="label default">cd</mark> 命令进到要共享的目录。</li>
+<li>选择下述任何一个命令进行执行。</li>
+<li>把 <a href="https://localhost:8000/">https://localhost:8000</a> 中的 localhost 改为自己的 <a href="#">Post not found: IPv4 系统服务-查看本机IP地址</a> 地址，分享给朋友。</li>
+<li>让朋友用浏览器打开您分享的链接。</li>
+<li>关闭终端或按 <mark class="label default">⌃Control + C</mark>终结web服务。</li>
+</ol>
+<img src="/43447/ipv4.jpg" class="">
+<a id="more"></a>
+
+<p>Python</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">python -m SimpleHTTPServer 8000</span><br><span class="line"><span class="comment"># 或</span></span><br><span class="line"><span class="comment"># 需要先升级 python 才可使用 python3 命令</span></span><br><span class="line">python3 -m http.server --cgi 8000</span><br></pre></td></tr></table></figure>
+
+<p>PHP</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">php -S localhost:8000</span><br></pre></td></tr></table></figure>
+
+<p>前端程序猿可以使用 npm 安装 serve 服务</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm i -g serve</span><br><span class="line"></span><br><span class="line"># 启动 web 服务命令，无需写端口号</span><br><span class="line"># 默认 5000 端口</span><br><span class="line">serve</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>www</tag>
+        <tag>web</tag>
+        <tag>localhost</tag>
+        <tag>php</tag>
+        <tag>python2</tag>
+        <tag>https://localhost:8000</tag>
       </tags>
   </entry>
   <entry>
