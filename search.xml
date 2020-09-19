@@ -25,6 +25,28 @@
       </tags>
   </entry>
   <entry>
+    <title>基础知识-应用程序的双开</title>
+    <url>/40536/</url>
+    <content><![CDATA[<p>有些朋友因工作的需要，通常都会有多个QQ或微信账户，最明显的职业就是客服、销售… 今天教程就告诉各位，如何在不下载第三方插件的情况下，实现微信双开。</p>
+<ol>
+<li>最简单粗暴的方式，直接 <mark class="label default">⌘Command + D</mark> 创建微信.app副本。</li>
+<li>运行微信内部的可执行文件。<br>2.1. 在访达的应用程序内找到<mark class="label default">“微信.app”</mark>；<br>2.2. 右键打开<mark class="label default">“显示包内容”</mark>；<br>2.3. 运行 <mark class="label default">“Contents -> MacOS”</mark> 下的可执行文件 WeChat；<br>2.4. 这时候会先弹出一个终端程序框，然后再弹出微信登录窗口；<br>2.5. 扫码登录即可登录使用。</li>
+</ol>
+<img src="/40536/wechat.png" class="">
+
+<p>也可在终端里直接运行下述命令：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">open -n /Applications/WeChat.app/Contents/MacOS/WeChat</span><br></pre></td></tr></table></figure>
+
+<p>注意：第二种双开的同时，会启用一个命令行窗口，该窗口是不能关闭的，否则双开的程序就会退出。</p>
+]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>双开</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础知识-截屏和录屏视频</title>
     <url>/44965/</url>
     <content><![CDATA[<p>MacOS 系统默认内置了截图和录屏功能，都集成在了 <mark class="label default">“截屏.app”</mark> 上。因为它是系统的一部分，所以能够跟 MacOS 高度融合。一般情况下，我们不需要先打开 <mark class="label default">“截屏.app”</mark>，就可以直接使用系统预设的快捷键，进行截屏或者录屏。但是该App有个短处就是没办法长截图和录制电脑自己的声音。</p>
@@ -271,6 +293,79 @@
       </tags>
   </entry>
   <entry>
+    <title>基础知识-输入法</title>
+    <url>/34408/</url>
+    <content><![CDATA[<p>在使用 Mac 电脑时，只要您写作或者编辑文档，肯定避免不了使用输入法，基础的操作相信大家都会。例如：</p>
+<p>常用快捷键：</p>
+<ul>
+<li><mark class="label default">中/英键</mark>：只切换中英文输入法</li>
+<li><mark class="label default">⌥Option + ⌃Control + 空格键</mark>：选择输入法菜单中下一个输入法</li>
+<li><mark class="label default">⌃Control + 空格键</mark>：选择输入法菜单中上一个输入法</li>
+<li><mark class="label default">⇧Shift + 6</mark>：颜文字……(^з^)-☆♂（中文状态）</li>
+<li><mark class="label default">⇧Shift + ⌥Option + K</mark>：</li>
+<li><mark class="label default">⌃Control + ⌘Command + 空格键</mark>：字符检查器，在这里能找到您日常所需的所有特殊字符
+<a id="more"></a>
+
+</li>
+</ul>
+<p>添加删除输入法：<br>在 “系统偏好设置-键盘-输入法” 里更改</p>
+<img src="/34408/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%BE%93%E5%85%A5%E6%B3%95.jpg" class="" title="添加删除输入法">
+
+<p>除了上述基础又基础的输入法使用外。偶尔情况下，教师、家长、新媒体运营、翻译工作者等群体，可能会遇到需要输入生僻字、给生僻字标注拼音、给英文单词标注音标… …情况</p>
+<p>这时我们就需要详细介绍下，MacOS 系统输入法的小技巧了～</p>
+<h2 id="输入生僻字"><a href="#输入生僻字" class="headerlink" title="输入生僻字"></a>输入生僻字</h2><p>中华文化博大精深，生活中遇见自己不认识的汉字，很正常嘛！这时我们要录入该字，怎么办？不着急～ 我们先观察观察字体结构，了解构造组成部分后，再把它拆分成多个简单的汉字，然后再在输入法里分别输入，按 <mark class="label default">Shift + 空格键</mark> 调出检测结果提示框，这样匹配的结果，不仅显示生僻字还会显示生僻字的拼音。</p>
+<p>以“泖mǎo”为例，我们把它拆分成左右两部分（氵shui + 卯mao），然后分别输入，按 <mark class="label default">Shift + 空格键</mark> 就会调出如下结果。</p>
+<img src="/34408/%E6%B3%96.jpg" class="" title="泖字的拆分">
+
+<h2 id="输入汉语拼音"><a href="#输入汉语拼音" class="headerlink" title="输入汉语拼音"></a>输入汉语拼音</h2><p>MacOS 系统内置了 ApplePressAndHoldEnabled 功能，中文状态下长按字母能重复性输入；英文状态下长按，可弹出元音音标提示框。利用该功能，我们可以输入汉语拼音字母的 1、2、4 声。</p>
+<img src="/34408/ApplePressAndHoldEnabled.jpg" class="" title="ApplePressAndHoldEnabled">
+
+<p>那么你可能会问，怎么没有 3 声哪？这是因为 ApplePressAndHoldEnabled 功能，是为英语音标专门设计的。所以，汉语的拼音还不是很兼容。如果您不喜欢 ApplePressAndHoldEnabled，我们可以使用 defaults 命令对其进行关闭。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write -g ApplePressAndHoldEnabled -bool <span class="literal">false</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">defaults write NSGlobalDomain ApplePressAndHoldEnabled -boolean <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 针对应用程序进行关闭</span></span><br><span class="line">defaults write <span class="string">&#x27;com.microsoft.VSCode&#x27;</span> ApplePressAndHoldEnabled -bool <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复 ApplePressAndHoldEnabled 功能</span></span><br><span class="line">defaults delete -g ApplePressAndHoldEnabled</span><br><span class="line"></span><br><span class="line"><span class="comment"># 枚举 ApplePressAndHoldEnabled 配置情况</span></span><br><span class="line"><span class="comment"># 未设置的不会显示任何结果</span></span><br><span class="line">defaults <span class="built_in">read</span> | grep ApplePressAndHoldEnabled</span><br></pre></td></tr></table></figure>
+
+<p>输入 3 声的字母，我们可以利用输入法扩展的 ⌥Option 组合键进行输入。<mark class="label default">⌥Option + A\E\V\~ + 元音字母</mark> 可以分别输入字母的 1、2、3、4 声。</p>
+<ul>
+<li><mark class="label default">⌥Option + A + U</mark>：一声 ū</li>
+<li><mark class="label default">⌥Option + E + U</mark>：二声 ú</li>
+<li><mark class="label default">⌥Option + V + U</mark>：三声 ǔ</li>
+<li><mark class="label default">⌥Option + ~ + U</mark>：四声 ù
+
+</li>
+</ul>
+<p>单个汉字的全拼，我们可以从系统自带的，词典内的「汉语词典」里进行复制。</p>
+<img src="/34408/%E7%A7%92.jpg" class="" title="汉语词典里的拼音">
+
+<p>除了获取单个汉字的全拼外，您可能还会遇到给多个文字，甚至给一段话添加拼音的情况。这时我们可以使用 Pages 的「拼音指南文本」功能，给它们添加。但是「拼音指南文本」有个缺陷，就是没办法对拼音进行个性化设置。</p>
+<img src="/34408/%E6%8B%BC%E9%9F%B3%E6%8C%87%E5%8D%97%E6%96%87%E6%9C%AC.jpg" class="" title="拼音指南文本">
+<img src="/34408/%E6%8B%BC%E9%9F%B3%E6%8C%87%E5%8D%97%E6%96%87%E6%9C%AC%E7%BB%93%E6%9E%9C.jpg" class="" title="拼音指南文本结果">
+
+<h2 id="输入国际音标"><a href="#输入国际音标" class="headerlink" title="输入国际音标"></a>输入国际音标</h2><ol>
+<li>英文状态下长按相关字母。</li>
+<li>在「词典-英汉·汉英词典」输入单词并复制音标。</li>
+<li><mark class="label default">⌃Control + ⌘Command + 空格键</mark> 调出字符检查器，然后在「音标字母」内找。
+<br>没有「音标字母」的，点击字符检查器左上角的 “设置” 图标进行追加。</li>
+</ol>
+<img src="/34408/%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D.jpg" class="" title="音标字母">
+
+<ol start="4">
+<li>ApplePressAndHoldEnabled 功能、字符检查器里没有的国际音标，可以到网络上进行搜索，然后添加到 “文本替换（“系统偏好设置-键盘-文本”）” 里。使用时只需要输入，「输入码」里面设定的单词，即可输入。</li>
+</ol>
+<img src="/34408/%E7%89%B9%E6%AE%8A%E9%9F%B3%E6%A0%87.jpg" class="" title="特殊音标">
+
+<br/>
+
+<p>最后的最后：<br>嫌 MacOS 输入国际音标麻烦的，<br>又或者某个国际音标实在找不到！可参照 <a href="https://support.apple.com/zh-cn/guide/mac-help/mchlp2866/mac">Apple 官网</a> 给出的示例文档，定制自己的个性化输入法，又或者下载搜狗输入法。</p>
+]]></content>
+      <categories>
+        <category>基础知识</category>
+      </categories>
+      <tags>
+        <tag>输入法</tag>
+        <tag>拼音</tag>
+        <tag>国际音标</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>快捷键-常用快捷键清单</title>
     <url>/43680/</url>
     <content><![CDATA[<p>使用快捷键是提高我们工作效率最明显的办法之一，这里为大家列出了日常使用 MacOS 系统，用到最多的几个快捷键。如果想了解更多快捷键，请到 <a href="https://support.apple.com/zh-cn/HT201236">苹果官网</a> 进行查看。</p>
@@ -385,76 +480,19 @@
       </tags>
   </entry>
   <entry>
-    <title>基础知识-输入法</title>
-    <url>/34408/</url>
-    <content><![CDATA[<p>在使用 Mac 电脑时，只要您写作或者编辑文档，肯定避免不了使用输入法，基础的操作相信大家都会。例如：</p>
-<p>常用快捷键：</p>
-<ul>
-<li><mark class="label default">中/英键</mark>：只切换中英文输入法</li>
-<li><mark class="label default">⌥Option + ⌃Control + 空格键</mark>：选择输入法菜单中下一个输入法</li>
-<li><mark class="label default">⌃Control + 空格键</mark>：选择输入法菜单中上一个输入法</li>
-<li><mark class="label default">⇧Shift + 6</mark>：颜文字……(^з^)-☆♂（中文状态）</li>
-<li><mark class="label default">⇧Shift + ⌥Option + K</mark>：</li>
-<li><mark class="label default">⌃Control + ⌘Command + 空格键</mark>：字符检查器，在这里能找到您日常所需的所有特殊字符
-<a id="more"></a>
+    <title>故障问题-Line too long in config file</title>
+    <url>/49857/</url>
+    <content><![CDATA[<p>打开<a href="/881/" title="终端.app">终端.app</a>，如果报下述错误！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Line too long <span class="keyword">in</span> config file</span><br><span class="line">unable to make sense of the file /private/etc/man.conf</span><br></pre></td></tr></table></figure>
 
-</li>
-</ul>
-<p>添加删除输入法：<br>在 “系统偏好设置-键盘-输入法” 里更改</p>
-<img src="/34408/%E6%B7%BB%E5%8A%A0%E5%88%A0%E9%99%A4%E8%BE%93%E5%85%A5%E6%B3%95.jpg" class="" title="添加删除输入法">
-
-<p>除了上述基础又基础的输入法使用外。偶尔情况下，教师、家长、新媒体运营、翻译工作者等群体，可能会遇到需要输入生僻字、给生僻字标注拼音、给英文单词标注音标… …情况</p>
-<p>这时我们就需要详细介绍下，MacOS 系统输入法的小技巧了～</p>
-<h2 id="输入生僻字"><a href="#输入生僻字" class="headerlink" title="输入生僻字"></a>输入生僻字</h2><p>中华文化博大精深，生活中遇见自己不认识的汉字，很正常嘛！这时我们要录入该字，怎么办？不着急～ 我们先观察观察字体结构，了解构造组成部分后，再把它拆分成多个简单的汉字，然后再在输入法里分别输入，按 <mark class="label default">Shift + 空格键</mark> 调出检测结果提示框，这样匹配的结果，不仅显示生僻字还会显示生僻字的拼音。</p>
-<p>以“泖mǎo”为例，我们把它拆分成左右两部分（氵shui + 卯mao），然后分别输入，按 <mark class="label default">Shift + 空格键</mark> 就会调出如下结果。</p>
-<img src="/34408/%E6%B3%96.jpg" class="" title="泖字的拆分">
-
-<h2 id="输入汉语拼音"><a href="#输入汉语拼音" class="headerlink" title="输入汉语拼音"></a>输入汉语拼音</h2><p>MacOS 系统内置了 ApplePressAndHoldEnabled 功能，中文状态下长按字母能重复性输入；英文状态下长按，可弹出元音音标提示框。利用该功能，我们可以输入汉语拼音字母的 1、2、4 声。</p>
-<img src="/34408/ApplePressAndHoldEnabled.jpg" class="" title="ApplePressAndHoldEnabled">
-
-<p>那么你可能会问，怎么没有 3 声哪？这是因为 ApplePressAndHoldEnabled 功能，是为英语音标专门设计的。所以，汉语的拼音还不是很兼容。如果您不喜欢 ApplePressAndHoldEnabled，我们可以使用 defaults 命令对其进行关闭。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">defaults write -g ApplePressAndHoldEnabled -bool <span class="literal">false</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">defaults write NSGlobalDomain ApplePressAndHoldEnabled -boolean <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 针对应用程序进行关闭</span></span><br><span class="line">defaults write <span class="string">&#x27;com.microsoft.VSCode&#x27;</span> ApplePressAndHoldEnabled -bool <span class="literal">false</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 恢复 ApplePressAndHoldEnabled 功能</span></span><br><span class="line">defaults delete -g ApplePressAndHoldEnabled</span><br><span class="line"></span><br><span class="line"><span class="comment"># 枚举 ApplePressAndHoldEnabled 配置情况</span></span><br><span class="line"><span class="comment"># 未设置的不会显示任何结果</span></span><br><span class="line">defaults <span class="built_in">read</span> | grep ApplePressAndHoldEnabled</span><br></pre></td></tr></table></figure>
-
-<p>输入 3 声的字母，我们可以利用输入法扩展的 ⌥Option 组合键进行输入。<mark class="label default">⌥Option + A\E\V\~ + 元音字母</mark> 可以分别输入字母的 1、2、3、4 声。</p>
-<ul>
-<li><mark class="label default">⌥Option + A + U</mark>：一声 ū</li>
-<li><mark class="label default">⌥Option + E + U</mark>：二声 ú</li>
-<li><mark class="label default">⌥Option + V + U</mark>：三声 ǔ</li>
-<li><mark class="label default">⌥Option + ~ + U</mark>：四声 ù
-
-</li>
-</ul>
-<p>单个汉字的全拼，我们可以从系统自带的，词典内的「汉语词典」里进行复制。</p>
-<img src="/34408/%E7%A7%92.jpg" class="" title="汉语词典里的拼音">
-
-<p>除了获取单个汉字的全拼外，您可能还会遇到给多个文字，甚至给一段话添加拼音的情况。这时我们可以使用 Pages 的「拼音指南文本」功能，给它们添加。但是「拼音指南文本」有个缺陷，就是没办法对拼音进行个性化设置。</p>
-<img src="/34408/%E6%8B%BC%E9%9F%B3%E6%8C%87%E5%8D%97%E6%96%87%E6%9C%AC.jpg" class="" title="拼音指南文本">
-<img src="/34408/%E6%8B%BC%E9%9F%B3%E6%8C%87%E5%8D%97%E6%96%87%E6%9C%AC%E7%BB%93%E6%9E%9C.jpg" class="" title="拼音指南文本结果">
-
-<h2 id="输入国际音标"><a href="#输入国际音标" class="headerlink" title="输入国际音标"></a>输入国际音标</h2><ol>
-<li>英文状态下长按相关字母。</li>
-<li>在「词典-英汉·汉英词典」输入单词并复制音标。</li>
-<li><mark class="label default">⌃Control + ⌘Command + 空格键</mark> 调出字符检查器，然后在「音标字母」内找。
-<br>没有「音标字母」的，点击字符检查器左上角的 “设置” 图标进行追加。</li>
-</ol>
-<img src="/34408/%E9%9F%B3%E6%A0%87%E5%AD%97%E6%AF%8D.jpg" class="" title="音标字母">
-
-<ol start="4">
-<li>ApplePressAndHoldEnabled 功能、字符检查器里没有的国际音标，可以到网络上进行搜索，然后添加到 “文本替换（“系统偏好设置-键盘-文本”）” 里。使用时只需要输入，「输入码」里面设定的单词，即可输入。</li>
-</ol>
-<img src="/34408/%E7%89%B9%E6%AE%8A%E9%9F%B3%E6%A0%87.jpg" class="" title="特殊音标">
-
-<br/>
-
-<p>最后的最后：<br>嫌 MacOS 输入国际音标麻烦的，<br>又或者某个国际音标实在找不到！可参照 <a href="https://support.apple.com/zh-cn/guide/mac-help/mchlp2866/mac">Apple 官网</a> 给出的示例文档，定制自己的个性化输入法，又或者下载搜狗输入法。</p>
+<p>请使用相关编辑器打开 <mark class="label default">/etc/man.conf</mark>，并在结尾处添加一行空白行保存，该问题即可解决。</p>
 ]]></content>
       <categories>
-        <category>基础知识</category>
+        <category>故障问题</category>
       </categories>
       <tags>
-        <tag>输入法</tag>
-        <tag>拼音</tag>
-        <tag>国际音标</tag>
+        <tag>man</tag>
+        <tag>/private/etc/man.conf</tag>
       </tags>
   </entry>
   <entry>
@@ -488,22 +526,6 @@
       <tags>
         <tag>程序损坏</tag>
         <tag>xxx.app无法打开</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>故障问题-Line too long in config file</title>
-    <url>/49857/</url>
-    <content><![CDATA[<p>打开<a href="/881/" title="终端.app">终端.app</a>，如果报下述错误！</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Line too long <span class="keyword">in</span> config file</span><br><span class="line">unable to make sense of the file /private/etc/man.conf</span><br></pre></td></tr></table></figure>
-
-<p>请使用相关编辑器打开 <mark class="label default">/etc/man.conf</mark>，并在结尾处添加一行空白行保存，该问题即可解决。</p>
-]]></content>
-      <categories>
-        <category>故障问题</category>
-      </categories>
-      <tags>
-        <tag>man</tag>
-        <tag>/private/etc/man.conf</tag>
       </tags>
   </entry>
   <entry>
@@ -621,25 +643,6 @@
       </tags>
   </entry>
   <entry>
-    <title>系统指令 Xcode-select --install</title>
-    <url>/44387/</url>
-    <content><![CDATA[<p>如果您是程序猿并且使用的是 Mac，肯定避免不了要安装 Xcode，因为它内置了很多开发所必须的环境。在最新版本的 Xcode 中，默认不再集成 「Xcode command line tools」。如果您不是 iOS 或 OS X 开发者，可以跳过 XCode（程序大小近10G）直接安装 「Xcode command line tools」 了。</p>
-<p>在 <a href="/881/" title="基础知识-终端工具">基础知识-终端工具</a> 内，键入如下命令，在弹出的界面点 Install 同意即可。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
-
-<p>如果 Install 不了，可到 <a href="https://developer.apple.com/download/more/">Developer Apple</a> 内下载相应的包。</p>
-<p>如果您想了解 Xcode command line tools 包含多少可用的命令，可以到 <mark class="label default">/Library/Developer/CommandLineTools/</mark> 查看，另外如果您想卸载的话直接删除该目录即可。</p>
-]]></content>
-      <categories>
-        <category>系统指令</category>
-      </categories>
-      <tags>
-        <tag>xcode</tag>
-        <tag>git</tag>
-        <tag>xcode command line tools</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>系统指令-删除程序的卸载残留</title>
     <url>/2296/</url>
     <content><![CDATA[<p>MacOS 系统上卸载程序，我们通常的做法就是，直接删除位于 “访达-应用程序” 里面的App；又或者按住 <mark class="label default">⌥option</mark> 直接在启动台卸载（只适用于从 App Store 下载的程序）。这两种做法都是不会删除程序的用户配置及其其它关键信息的，时间长了系统虽然会帮我们自动清理一些残留。如果我们现在就不想保留哪？此时<mark class="label warning">可以使用 mdfind 命令，手动查询跟程序相关的文件并删除</mark>。</p>
@@ -660,6 +663,25 @@
         <tag>卸载</tag>
         <tag>卸载残留</tag>
         <tag>CleanMyMac X.app</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>系统指令 Xcode-select --install</title>
+    <url>/44387/</url>
+    <content><![CDATA[<p>如果您是程序猿并且使用的是 Mac，肯定避免不了要安装 Xcode，因为它内置了很多开发所必须的环境。在最新版本的 Xcode 中，默认不再集成 「Xcode command line tools」。如果您不是 iOS 或 OS X 开发者，可以跳过 XCode（程序大小近10G）直接安装 「Xcode command line tools」 了。</p>
+<p>在 <a href="/881/" title="基础知识-终端工具">基础知识-终端工具</a> 内，键入如下命令，在弹出的界面点 Install 同意即可。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">xcode-select --install</span><br></pre></td></tr></table></figure>
+
+<p>如果 Install 不了，可到 <a href="https://developer.apple.com/download/more/">Developer Apple</a> 内下载相应的包。</p>
+<p>如果您想了解 Xcode command line tools 包含多少可用的命令，可以到 <mark class="label default">/Library/Developer/CommandLineTools/</mark> 查看，另外如果您想卸载的话直接删除该目录即可。</p>
+]]></content>
+      <categories>
+        <category>系统指令</category>
+      </categories>
+      <tags>
+        <tag>xcode</tag>
+        <tag>git</tag>
+        <tag>xcode command line tools</tag>
       </tags>
   </entry>
   <entry>
