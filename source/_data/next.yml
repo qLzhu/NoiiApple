@@ -1,0 +1,160 @@
+custom_file_path:
+  head: source/_data/head.swig
+  # header: source/_data/header.swig
+  # sidebar: source/_data/sidebar.swig
+  # postMeta: source/_data/post-meta.swig
+  # postBodyEnd: source/_data/post-body-end.swig
+  # footer: source/_data/footer.swig
+  # bodyEnd: source/_data/body-end.swig
+  variable: source/_data/variables.styl
+  # mixin: source/_data/mixins.styl
+  style: source/_data/custom.styl
+
+# scheme: Muse
+# scheme: Mist
+scheme: Pisces
+# scheme: Gemini
+# darkmode: true
+
+# 网站图标
+favicon:
+  small: /images/favicon-16x16.png
+  medium: /images/favicon-32x32.png
+  apple_touch_icon: /images/apple-touch-icon.png
+  safari_pinned_tab: /images/safari-pinned-tab.svg
+
+# 头像
+avatar:
+  url: /images/avatar.jpg
+  rounded: true
+  rotated: false
+
+# 链接
+# https://fa5.dashgame.com/#/%E5%9B%BE%E6%A0%87
+social:
+  Coding: https://siyou.coding.net/public/noiiapple/noiiapple/git || fab fa-github
+  E-Mail: mailto:qinlzhu@outlook.com || fa fa-envelope
+
+social_icons:
+  enable: true
+  icons_only: true
+  transition: true
+
+menu:
+  home: / || fa fa-home
+  about: /about/ || fa fa-user
+  tags: /tags/ || fa fa-tags
+  categories: /categories/ || fa fa-th
+  archives: /archives/ || fa fa-archive
+  #schedule: /schedule/ || fa fa-calendar
+  #sitemap: /sitemap.xml || fa fa-sitemap
+  #commonweal: /404/ || fa fa-heartbeat
+
+# Enable / Disable menu icons / item badges.
+menu_settings:
+  icons: true
+  badges: true
+
+sidebar:
+  position: right
+
+footer:
+  icon:
+    name: fa fa-hand-point-right
+    animated: true
+    color: "#999"
+  powered: false
+
+# 代码块
+codeblock:
+  theme:
+    light: arta
+    dark: tomorrow-night
+  prism:
+    light: prism
+    dark: prism-dark
+  copy_button:
+    enable: true
+
+# 阅读进度
+reading_progress:
+  enable: true
+  position: top
+  color: "#37c6c0"
+  height: 3px
+
+# 页面内的版权信息
+creative_commons:
+  license: by-nc-sa
+  sidebar: true
+  post: true
+  language: deed.zh
+
+# -----------------------------------------------------------------------------------------------
+# SEO
+# -----------------------------------------------------------------------------------------------
+# Google
+# See: https://www.google.com/webmasters
+google_site_verification: 6BjKTRWhfD_KmT8CoJhEMtXp5RdD18GZflC0llCd7h0
+
+# Baidu
+# See: https://ziyuan.baidu.com/site
+baidu_site_verification: joZHpTfaSD
+baidu_push: true
+
+# TouTiao
+# https://zhanzhang.toutiao.com/
+toutiao_site_verification: 7LDfTre4eBuKlaJBOp/5
+
+# 360
+# 验证码经常出现问题，换浏览器登录即可 http://zhanzhang.so.com/
+360_site_verification: 51de4dd88c887c48b8637c4588b7db60
+
+# Disable Baidu transformation on mobile devices.
+# disable_baidu_transformation: true
+
+# If true, site-subtitle will be added to index page.
+# Remember to set up your site-subtitle in Hexo `_config.yml` (e.g. subtitle: Subtitle)
+# index_with_subtitle: true
+
+# -----------------------------------------------------------------------------------------------
+# 第三方插件
+# -----------------------------------------------------------------------------------------------
+# 本地搜索
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
+  unescape: false
+  preload: false
+
+# 字数统计及其阅读时间
+symbols_count_time:
+  separated_meta: true                                        #在文章 meta 信息中单独一行显示
+  item_text_post: true                                        #在文章 meta 信息中显示字数和时间
+  item_text_total: false                                      #在站点底部显示所有文章的总计字数和时间
+
+# 访问量统计
+busuanzi_count:
+  enable: true
+  total_visitors: false
+  total_visitors_icon: user
+  total_views: false
+  total_views_icon: eye
+  post_views: true
+  post_views_icon: eye
+
+# 评论
+valine:
+  enable: true
+  appId: fvBXiThyTuo31WbLeXU8FbnK-gzGzoHsz
+  appKey: BtBG3bqbx6AkgY741SxPHyc8
+  placeholder: 评论时，请填写昵称和邮箱，回复会以邮件的形式发送给您！ #留言
+  avatar: mm                                                   #默认的头像样式
+  meta: [nick, mail]                                           #留言板开头部分
+  pageSize: 10                                                 #每页显示的数量
+  language: zh-cn                                              #语言
+  visitor: false                                               #浏览量（不建议开启）
+  comment_count: true                                          #页面 meta 区是否显示留言数量
+  recordIP: false                                              #是否显示用户IP
+  serverURLs:                                                  #自定义域名
