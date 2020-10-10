@@ -21,7 +21,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.noiiapple.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml"};
+    var CONFIG = {"hostname":"www.noiiapple.com","root":"/","scheme":"Pisces","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml"};
   </script>
 
   <meta name="description" content="只要使用您经常使用电脑，肯定或多或少听说过电脑终端。并且遇到稍微复杂点的电脑故障时，教程或者案例总是教我们如何如何在终端中操作、及其如何如何终结。那么，终端到底是什么？   要讲明终端是什么，首先我们需要了解电脑系统的组成。通俗点的说，操作系统由两部分组成，分别是内核和用户式的交互式界面。内核负责系统的全部逻辑操作，由非常多的命令组成。这部分是系统正常运行的基础，不与用户直接接触。而交互式界面则统">
@@ -33,7 +33,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.noiiapple.com/881/terminal.jpg">
 <meta property="article:published_time" content="2020-08-19T04:02:37.000Z">
-<meta property="article:modified_time" content="2020-08-29T09:49:03.124Z">
+<meta property="article:modified_time" content="2020-09-21T11:41:40.208Z">
 <meta property="article:author" content="Mr.QinLzhu">
 <meta property="article:tag" content="terminal">
 <meta property="article:tag" content="shell">
@@ -175,24 +175,24 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
 
   </li>
-        <li class="menu-item menu-item-about">
+        <li class="menu-item menu-item-archives">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
-
-  </li>
-        <li class="menu-item menu-item-tags">
-
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">60</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部文章</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
 
   </li>
-        <li class="menu-item menu-item-archives">
+        <li class="menu-item menu-item-tags">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>全部文章<span class="badge">18</span></a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于本站</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -359,7 +359,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新时间</span>
-                <time title="修改时间：2020-08-29 17:49:03" itemprop="dateModified" datetime="2020-08-29T17:49:03+08:00">2020-08-29</time>
+                <time title="修改时间：2020-09-21 19:41:40" itemprop="dateModified" datetime="2020-09-21T19:41:40+08:00">2020-09-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -398,7 +398,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.3k</span>
+              <span>3.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -461,7 +461,7 @@
 <h2 id="tab自动补全"><a href="#tab自动补全" class="headerlink" title="tab自动补全"></a>tab自动补全</h2><p>打开 Terminal 输入 <mark class="label default">nano .inputrc</mark>，再输入下述内容</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> completion-ignore-case on</span><br><span class="line"><span class="built_in">set</span> show-all-if-ambiguous on</span><br><span class="line">TAB: menu-complete</span><br></pre></td></tr></table></figure>
 
-<p>完成后按 <mark class="label default">⌃Control ＋ o</mark> 键保存关闭、重启。</p>
+<p>完成后按 <mark class="label default">⌃Control ＋ o</mark> 键保存关闭、重启Terminal。</p>
 <h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh</span><br><span class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换shell解释器为zsh</span></span><br><span class="line">chsh -s $(<span class="built_in">which</span> zsh)</span><br></pre></td></tr></table></figure>
 
 <p>完成后重启终端。卸载 oh-my-zsh 直接在终端执行 <mark class="label default">uninstall_oh_my_zsh</mark> 进行卸载！并且它内置了很多 Plugins，默认开启的是 git，您也可以按照 <a target="_blank" rel="noopener" href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins</a> 所示开启和查看。</p>

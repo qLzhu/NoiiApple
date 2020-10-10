@@ -218,7 +218,7 @@
 <h2 id="tab自动补全"><a href="#tab自动补全" class="headerlink" title="tab自动补全"></a>tab自动补全</h2><p>打开 Terminal 输入 <mark class="label default">nano .inputrc</mark>，再输入下述内容</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">set</span> completion-ignore-case on</span><br><span class="line"><span class="built_in">set</span> show-all-if-ambiguous on</span><br><span class="line">TAB: menu-complete</span><br></pre></td></tr></table></figure>
 
-<p>完成后按 <mark class="label default">⌃Control ＋ o</mark> 键保存关闭、重启。</p>
+<p>完成后按 <mark class="label default">⌃Control ＋ o</mark> 键保存关闭、重启Terminal。</p>
 <h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh</span><br><span class="line">cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换shell解释器为zsh</span></span><br><span class="line">chsh -s $(<span class="built_in">which</span> zsh)</span><br></pre></td></tr></table></figure>
 
 <p>完成后重启终端。卸载 oh-my-zsh 直接在终端执行 <mark class="label default">uninstall_oh_my_zsh</mark> 进行卸载！并且它内置了很多 Plugins，默认开启的是 git，您也可以按照 <a href="https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins">https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins</a> 所示开启和查看。</p>
@@ -480,22 +480,6 @@
       </tags>
   </entry>
   <entry>
-    <title>故障问题-Line too long in config file</title>
-    <url>/49857/</url>
-    <content><![CDATA[<p>打开<a href="/881/" title="终端.app">终端.app</a>，如果报下述错误！</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Line too long <span class="keyword">in</span> config file</span><br><span class="line">unable to make sense of the file /private/etc/man.conf</span><br></pre></td></tr></table></figure>
-
-<p>请使用相关编辑器打开 <mark class="label default">/etc/man.conf</mark>，并在结尾处添加一行空白行保存，该问题即可解决。</p>
-]]></content>
-      <categories>
-        <category>故障问题</category>
-      </categories>
-      <tags>
-        <tag>man</tag>
-        <tag>/private/etc/man.conf</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>故障问题-app程序损坏</title>
     <url>/17717/</url>
     <content><![CDATA[<p>如果我们直接安装或者接收别人传来的 .app 程序时，有时会提示“xxx.app 已损坏，无法打开。您应将它移除到废纸篓。” 的问题。</p>
@@ -526,6 +510,22 @@
       <tags>
         <tag>程序损坏</tag>
         <tag>xxx.app无法打开</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>故障问题-Line too long in config file</title>
+    <url>/49857/</url>
+    <content><![CDATA[<p>打开<a href="/881/" title="终端.app">终端.app</a>，如果报下述错误！</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">Line too long <span class="keyword">in</span> config file</span><br><span class="line">unable to make sense of the file /private/etc/man.conf</span><br></pre></td></tr></table></figure>
+
+<p>请使用相关编辑器打开 <mark class="label default">/etc/man.conf</mark>，并在结尾处添加一行空白行保存，该问题即可解决。</p>
+]]></content>
+      <categories>
+        <category>故障问题</category>
+      </categories>
+      <tags>
+        <tag>man</tag>
+        <tag>/private/etc/man.conf</tag>
       </tags>
   </entry>
   <entry>
